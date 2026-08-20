@@ -1,0 +1,36 @@
+@startuml
+!pragma layout smetana
+'https://plantuml.com/sequence-diagram
+
+object Bruger{
+Brugernavn
+Adgangskode
+Favoritter : liste
+Reviews : liste
+}
+
+object Spil{
+Spillere : int
+Materialer : liste
+}
+
+object Review{
+Forfatter
+Rating : int
+Tekst
+}
+
+object Forum
+
+object Ruleset
+
+object Gameplay
+
+Bruger "1..*" --- "1" Spil
+Review "0..*" --- "1" Spil
+Bruger "1" --- "0..*" Review
+Forum "0..*" --- "0..*" Bruger
+Spil "1" --- "1..*" Ruleset
+Spil "1" --- "1" Gameplay
+
+@enduml
