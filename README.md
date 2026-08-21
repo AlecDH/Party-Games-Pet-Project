@@ -1,5 +1,5 @@
 # Pet Project Party Games
-Et kartotek over selskabslege, kort-, terningespil og lign. Brugere kan tilpasse deres søgning efter deres aktuelle ønsker og behov, såsom antal spillere, varighed, nødvendige materialer, etc. Ved hvert spil vil findes regelsæt, bedømmelser og mulighed for at spille spillet digitalt.
+Et kartotek over selskabslege, kort-, terningespil og lign. Brugere kan tilpasse deres søgning efter deres aktuelle ønsker og behov, såsom antal spillere, varighed, nødvendige materialer, etc. Ved hvert spil findes regelsæt, bedømmelser og mulighed for at spille spillet digitalt.
 ## Funktionelle krav
 ### Need-to-have
 -	Brugeren skal kunne søge efter spil
