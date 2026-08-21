@@ -1,5 +1,5 @@
 # Pet Project Party Games
-## Funktionelle krav**
+## Funktionelle krav
 ### Need-to-have
 -	Brugeren skal kunne søge efter spil
 -	Brugeren skal kunne tilføje forskellige filtre til søgningen
@@ -15,7 +15,7 @@
 -	Systemet skal præsentere spillene i oversigt med højest ratede spil først
 -	Systemet skal give mulighed for at se mest populære spil baseret på denne uge, måned osv.
 -	Brugeren skal kunne markere spil som favoritter
-### Non-funktionelle krave
+## Non-funktionelle krave
 -	Oplysninger om spillene skal præsenteres ensformigt
 -	Tekst i brugerfladen skal være dansk
 -	Brugernes adgangskoder må ikke gemmes i klar tekst
