@@ -26,9 +26,9 @@ object Ruleset
 
 object Gameplay
 
-Bruger "1..*" --- "1" Spil
+Bruger "1..*" --- "1" Spil : Tilgår
 Review "0..*" --- "1" Spil
-Bruger "1" --- "0..*" Review
+Bruger "1" --- "0..*" Review : Opretter
 Forum "0..*" --- "0..*" Bruger
 Spil "1" --- "1..*" Ruleset
 Spil "1" --- "1" Gameplay

@@ -1,5 +1,13 @@
 # Pet Project Party Games
 Et kartotek over selskabslege, kort-, terningespil og lign. Brugere kan tilpasse deres søgning efter deres aktuelle ønsker og behov, såsom antal spillere, varighed, nødvendige materialer, etc. Ved hvert spil findes regelsæt, bedømmelser og mulighed for at spille spillet digitalt.
+
+## Målgruppe
+- Unge og festglade personer, som deltager i fester — både med og uden alkohol
+- Personer som leder efter eller mangler inspiration til sjove fest- og drukspil.
+- Personer som ønsker en nem og hurtig måde at spille fest- og drukspil på, uden nødvendigvis at have fysiske spilmaterialer til rådighed.
+- Personer som ønsker hurtigt at kunne komme i gang med et spil.
+- Personer som ønsker at have adgang til fest- og drukspil direkte fra deres mobil eller computer.
+- Målgruppen er overordnet set social og søger underholdning, som kan samle venner.
 ## Funktionelle krav
 ### Need-to-have
 -	Brugeren skal kunne søge efter spil
