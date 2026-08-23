@@ -38,10 +38,10 @@ Et kartotek over selskabslege, kort-, terningespil og lign. Brugere kan tilpasse
 -	For hvert spil vises navn, et billede, antal spillere og kategori-ikoner
 ### US-2
 #### Som bruger vil jeg kunne tilføje filtre til min oversigt, så jeg kan finde relevante spil
--	Brugeren skal kunne tilføje eller fjerne binære filtre
--	Brugeren skal kunne justere antal spillere
+-	Brugeren skal kunne filtrere efter kategori
+-   Brugeren skal kunne filtrere efter varighed
+-	Brugeren skal kunne filtrere efter antal spillere
 -	Oversigten skal opdateres i forhold til filtrene
-(Specifikke filtre aftales på et senere tidspunkt)
 -	Givet at, ingen spil passer til filtrene, når filtrene gives, så oplyses brugeren om dette
 ### US-3
 #### Som bruger vil jeg kunne vælge et spil, så jeg kan se oplysninger om spillet
