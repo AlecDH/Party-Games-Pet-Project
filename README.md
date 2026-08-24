@@ -46,6 +46,7 @@ Et kartotek over selskabslege, kort-, terningespil og lign. Brugere kan tilpasse
 ### US-3
 #### Som bruger vil jeg kunne vælge et spil, så jeg kan se oplysninger om spillet
 -	Når brugeren klikker på et spil, så vises oplysningerne for det givne spil
+-   Når brugeren klikker på et spil, så opdateres antallet af registrerede klik på spillet
 ### US-4
 #### Som bruger vil jeg kunne ændre reglerne, så jeg kan spille spillene som drukspil
 -	Givet at, brugeren har valgt et spil, når brugeren vælger ”alkohol-regler” til, vises ét sæt regler
