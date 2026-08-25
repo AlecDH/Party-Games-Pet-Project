@@ -26,11 +26,17 @@ object Ruleset
 
 object Gameplay
 
-Bruger "1..*" --- "0..*" Spil : Gør til favorit
+object Statestik{
+gennemsnitRating : decimal
+antalKlik
+}
+
+Bruger "0..*" --- "0..*" Spil : Gør til favorit
 Review "0..*" --- "1" Spil : Tilhører
 Bruger "1" --- "0..*" Review : Opretter
 Forum "0..*" --- "0..*" Bruger
 Spil "1" --- "1..*" Ruleset
-Spil "1" --- "1" Gameplay
+Spil "1" --- "0..1" Gameplay
+Spil "1" --- "1" Statestik
 
 @enduml
