@@ -34,7 +34,7 @@ Et kartotek over selskabslege, kort-, terningespil og lign. Brugere kan tilpasse
 ### US-1
 #### Som bruger vil jeg kunne se en oversigt over spil, så jeg kan vælge et
 -	Oversigten skal repræsentere de spil, der findes i databasen
--	Oversigten skal kunne inddeles i flere sider, hvis det e rnødvendigt
+-	Oversigten skal kunne inddeles i flere sider, hvis det er nødvendigt
 -	For hvert spil vises navn, et billede, antal spillere og kategori-ikoner
 ### US-2
 #### Som bruger vil jeg kunne tilføje filtre til min oversigt, så jeg kan finde relevante spil
