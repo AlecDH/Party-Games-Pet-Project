@@ -3,21 +3,21 @@
 'https://plantuml.com/sequence-diagram
 
 object Bruger{
-Brugernavn
-Adgangskode
-Favoritter : liste
-Reviews : liste
+brugernavn
+adgangskode
+favoritter : liste
+reviews : liste
 }
 
 object Spil{
-Spillere : int
-Materialer : liste
+spillere : int
+materialer : liste
 }
 
 object Review{
-Forfatter
-Rating : int
-Tekst
+forfatter
+rating : int
+tekst
 }
 
 object Forum
@@ -26,8 +26,8 @@ object Ruleset
 
 object Gameplay
 
-Bruger "1..*" --- "1" Spil : Tilgår
-Review "0..*" --- "1" Spil
+Bruger "1..*" --- "0..*" Spil : Gør til favorit
+Review "0..*" --- "1" Spil : Tilhører
 Bruger "1" --- "0..*" Review : Opretter
 Forum "0..*" --- "0..*" Bruger
 Spil "1" --- "1..*" Ruleset
