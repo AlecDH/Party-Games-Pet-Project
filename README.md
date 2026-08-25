@@ -25,7 +25,7 @@ Et kartotek over selskabslege, kort-, terningespil og lign. Brugere kan tilpasse
 -	Systemet skal give mulighed for at se mest populære spil baseret på denne uge, måned osv.
 -	Brugeren skal kunne markere spil som favoritter
 ## Non-funktionelle krave
--	Oplysninger om spillene skal præsenteres ensformigt
+-	Oplysninger om spillene skal præsenteres ensartet
 -	Tekst i brugerfladen skal være dansk
 -	Brugernes adgangskoder må ikke gemmes i klar tekst
 -	Systemet skal kunne udvides med flere spil senere
@@ -34,7 +34,7 @@ Et kartotek over selskabslege, kort-, terningespil og lign. Brugere kan tilpasse
 ### US-1
 #### Som bruger vil jeg kunne se en oversigt over spil, så jeg kan vælge et
 -	Oversigten skal repræsentere de spil, der findes i databasen
--	Der skal vises 10 spil pr. side
+-	Oversigten skal kunne inddeles i flere sider, hvis det e rnødvendigt
 -	For hvert spil vises navn, et billede, antal spillere og kategori-ikoner
 ### US-2
 #### Som bruger vil jeg kunne tilføje filtre til min oversigt, så jeg kan finde relevante spil
@@ -45,7 +45,7 @@ Et kartotek over selskabslege, kort-, terningespil og lign. Brugere kan tilpasse
 -	Givet at, ingen spil passer til filtrene, når filtrene gives, så oplyses brugeren om dette
 ### US-3
 #### Som bruger vil jeg kunne vælge et spil, så jeg kan se oplysninger om spillet
--	Når brugeren klikker på et spil, så vises oplysningerne for det givne spil
+-	Når brugeren klikker på et spil, så vises navn, antal spillere, varighed, gennemsnitlig bedømmelse samt regelsæt (uden alkohol)
 -   Når brugeren klikker på et spil, så opdateres antallet af registrerede klik på spillet
 ### US-4
 #### Som bruger vil jeg kunne ændre reglerne, så jeg kan spille spillene som drukspil
