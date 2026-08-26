@@ -10,8 +10,9 @@ reviews : liste
 }
 
 object Spil{
-spillere : int
+spillerKapacitet : int liste
 materialer : liste
+kategorier : liste
 }
 
 object Review{
@@ -29,6 +30,7 @@ object Gameplay
 object Statestik{
 gennemsnitRating : decimal
 antalKlik
+varighed : tid
 }
 
 Bruger "0..*" --- "0..*" Spil : Gør til favorit
