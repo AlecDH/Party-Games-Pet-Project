@@ -46,11 +46,11 @@ Et kartotek over selskabslege, kort-, terningespil og lign. Brugere kan tilpasse
 ### US-3
 #### Som bruger vil jeg kunne vælge et spil, så jeg kan se oplysninger om spillet
 -	Når brugeren klikker på et spil, så vises navn, antal spillere, varighed, gennemsnitlig bedømmelse samt regelsæt (uden alkohol)
--   Når brugeren klikker på et spil, så opdateres antallet af registrerede klik på spillet
+-   Når brugeren vælger et spil, så registreres dette og gemmes i spillets statistik
 ### US-4
 #### Som bruger vil jeg kunne ændre reglerne, så jeg kan spille spillene som drukspil
 -	Givet at, brugeren har valgt et spil, når brugeren vælger ”alkohol-regler” til, vises ét sæt regler
--	Givet at, brugeren har valgt et spil, når brugeren vælger ”alkohol-regler” fra, vises et andet sæt regler
+-	Givet at, brugeren har sat "alkohol-regler" til ved et spil, når brugeren vælger ”alkohol-regler” fra, vises et andet sæt regler
 ### US-5
 #### Som bruger vil jeg kunne sortere spiloversigten efter popularitet, navn eller varighed
 -	Givet at, sorteringen er sat til ”popularitet”, når oversigten vises, så vil spil med flest klik vises øverst
