@@ -57,3 +57,48 @@ Et kartotek over selskabslege, kort-, terningespil og lign. Brugere kan tilpasse
 -	Givet at, sorteringen er sat til ”alfabetisk”, når oversigten vises, så vil spil vises i alfabetisk rækkefølge
 -	Givet at, sorteringen er sat til ”varighed”, når oversigten vises, så vil spil med kortest varighed vises øverst
 -	Alle sorteringer skal kunne vises i omvendt rækkefølge
+
+## Domæne model
+```mermaid
+
+classDiagram
+
+class Bruger{
+brugernavn
+adgangskode
+favoritter : liste
+reviews : liste
+}
+
+class Spil{
+spillerKapacitet : int liste
+materialer : liste
+kategorier : liste
+}
+
+class Review{
+forfatter
+rating : int
+tekst
+}
+
+class Forum{}
+
+class Ruleset{}
+
+class Gameplay{}
+
+class Statestik{
+gennemsnitRating : decimal
+antalKlik
+varighed : tid
+}
+
+Bruger "0..*" -- "0..*" Spil : Gør til favorit
+Review "0..*" -- "1" Spil : Tilhører
+Bruger "1" -- "0..*" Review : Opretter
+Forum "0..*" -- "0..*" Bruger
+Spil "1" -- "1..*" Ruleset
+Spil "1" -- "0..1" Gameplay
+Spil "1" -- "1" Statestik
+```

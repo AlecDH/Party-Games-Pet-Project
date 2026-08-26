@@ -1,6 +1,4 @@
 @startuml
-!pragma layout smetana
-'https://plantuml.com/sequence-diagram
 
 object Bruger{
 brugernavn
