@@ -1,0 +1,116 @@
+.infoVindue{
+    margin: auto;
+    align-items: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.titel{
+    text-align: center;
+}
+
+/* Venstre side */
+.infoVenstre{
+    display: grid;
+    grid-template-rows: 1fr 160px;
+}
+
+/* Logo */
+.spilLogo{
+    max-width: 70%;
+    max-height: 70%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+
+    justify-self: center;
+    align-self: center;
+}
+
+/* Grouping af spil knap og drukregel checkbox */
+.infoVenstreKnapper{
+    margin: 0 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 160px;
+}
+
+/* "Spil" knap" */
+.Spil{
+    width: 60%;
+    height: 50px;
+    justify-self: center;
+    align-self:center;
+}
+
+/* "Drukregler" checkbox */
+.drukregler{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Højre side */
+.infoHøjre{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+/* feltet for h3 titlerne i højre side */
+.infoFelt{
+    margin: 15px 0;
+    background-color: #b3d4fc;
+    align-self: center;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Container for kort regelsæt og læs mere knap */
+.regelsætContainer{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 5px;
+}
+
+/* kort regeltekst */
+.kortRegelsæt{
+    background-color: limegreen;
+    border: 1px solid;
+    align-self: center;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0;
+}
+
+/* Læs mere knap */
+.læsMere{
+    width: 60%;
+    height: 50px;
+    margin-top: 20px;
+    justify-self: center;
+    align-self:center;
+    background-color: limegreen;
+}
+
+
+/* Generelt buttons */
+button{
+    border-radius: 1px;
+    font-weight: bold;
+}
+
+/* test til at visualisere divs */
+div{
+    border-width: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+
