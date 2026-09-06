@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Spil Popup</title>
+    <link rel="stylesheet" href="../css/colors.css">
     <link rel="stylesheet" href="../css/Style.css">
     <link rel="stylesheet" href="../css/customStyle.css">
 </head>
 <body>
 
-<!-- Titel på spillet -->
-<h2 class="titel">Titel</h2>
 
 <!-- Container for info om spillet -->
 <div class="infoVindue">
+    <!-- Titel på spillet -->
+    <h2 class="titel" style="grid-area: box-1">Titel</h2>
 
     <!-- Container for info i venstre side -->
-    <div class="infoVenstre">
+    <div class="infoVenstre" style="grid-area: box-2">
 
         <!-- Billede / Spillogo -->
         <img src="../assets/ek_logo.jpg" class="spilLogo" alt="Billede af spillets logo">
@@ -28,44 +29,45 @@
 
             <!-- Container til drukregler checkbox og label -->
             <div class="drukregler">
-            <input type="checkbox" id="Drukregler" name="Drukregler" value="Ja">
-            <label for="Drukregler"  id="drukreglerLabel"> Drukregler </label>
+                <input type="checkbox" id="Drukregler" name="Drukregler" value="Ja">
+                <label for="Drukregler" id="drukreglerLabel"> Drukregler </label>
             </div>
 
         </div>
     </div>
 
     <!-- Container for info i højre side -->
-    <div class="infoHøjre">
+    <div class="infoHøjre" style="grid-area: box-3">
 
         <!-- h3 overskrifter for spilinfo -->
-        <h3 class="infoFelt">x til x spillere</h3>
+        <div class="infoOverskrifter">
+            <h3 class="infoFelt">x til x spillere</h3>
 
-        <h3 class="infoFelt">x terninger</h3>
+            <h3 class="infoFelt">x terninger</h3>
 
-        <h3 class="infoFelt">x minutter</h3>
+            <h3 class="infoFelt">x minutter</h3>
 
-        <h3 class="infoFelt">x/x stjerner</h3>
+            <h3 class="infoFelt">x/x stjerner</h3>
+        </div>
 
         <!-- Container til kort regelsæt og læs mere knap -->
         <div class="regelsætContainer">
 
-        <p class="kortRegelsæt">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere ipsum vel tortor porttitor, sed maximus nunc accumsan.
-            Nullam ac odio a urna sollicitudin vestibulum. Vivamus dignissim lacinia leo, nec dictum nisl sodales ac.
-            Phasellus ut lorem in turpis congue pellentesque.
-        </p>
-
-        <button class="læsMere">Læs mere</button>
+            <p class="kortRegelsæt">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere ipsum vel tortor porttitor, sed
+                maximus nunc accumsan.
+                Nullam ac odio a urna sollicitudin vestibulum. Vivamus dignissim lacinia leo, nec dictum nisl sodales
+                ac.
+                Phasellus ut lorem in turpis congue pellentesque.
+            </p>
 
         </div>
+
+        <button class="læsMere">Læs mere</button>
 
     </div>
 
 </div>
-
-
-
 
 
 </body>

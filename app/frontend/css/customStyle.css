@@ -2,7 +2,14 @@
     margin: auto;
     align-items: start;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-areas:
+            "box-1 box-1"
+            "box-2 box-3";
+    background-color: var(--white);
+    border: 1px solid;
+    border-radius: 5px;
+    max-width: 1000px;
 }
 
 .titel{
@@ -12,19 +19,19 @@
 /* Venstre side */
 .infoVenstre{
     display: grid;
-    grid-template-rows: 1fr 160px;
+
 }
 
 /* Logo */
 .spilLogo{
-    max-width: 70%;
-    max-height: 70%;
+    max-width: 80%;
+    max-height: 80%;
     width: auto;
     height: auto;
     object-fit: contain;
 
     justify-self: center;
-    align-self: center;
+    align-self: start;
 }
 
 /* Grouping af spil knap og drukregel checkbox */
@@ -38,9 +45,10 @@
 /* "Spil" knap" */
 .Spil{
     width: 60%;
-    height: 50px;
+    height: 70%;
     justify-self: center;
     align-self:center;
+    background-color: var(--red);
 }
 
 /* "Drukregler" checkbox */
@@ -54,15 +62,15 @@
 
 /* Højre side */
 .infoHøjre{
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
+    display: grid;
+    grid-gap: 10px;
+    padding-right: 50px;
 }
 
 /* feltet for h3 titlerne i højre side */
 .infoFelt{
     margin: 15px 0;
-    background-color: #b3d4fc;
+    background-color: var(--beige);
     align-self: center;
     text-align: center;
     border: 1px solid;
@@ -72,21 +80,21 @@
 
 /* Container for kort regelsæt og læs mere knap */
 .regelsætContainer{
-    margin-top: 70px;
     display: flex;
     flex-direction: column;
+    background-color: var(--beige);
+    border: 1px solid;
+    border-radius: 5px;
     align-self: center;
     gap: 5px;
 }
 
 /* kort regeltekst */
 .kortRegelsæt{
-    background-color: limegreen;
-    border: 1px solid;
     align-self: center;
+
     text-align: center;
-    border-radius: 5px;
-    margin: 0;
+    padding: 10px;
 }
 
 /* Læs mere knap */
@@ -96,7 +104,7 @@
     margin-top: 20px;
     justify-self: center;
     align-self:center;
-    background-color: limegreen;
+    background-color: var(--orange);
 }
 
 
