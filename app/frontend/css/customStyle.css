@@ -12,6 +12,18 @@
     max-width: 1000px;
 }
 
+.læsMereVindue{
+    margin: auto;
+    align-items: start;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+            "box-1 box-1"
+            "box-2 box-3"
+            "box-4 box-4";
+    background-color: var(--white);
+}
+
 .titel{
     text-align: center;
 }
@@ -19,7 +31,12 @@
 /* Venstre side */
 .infoVenstre{
     display: grid;
+}
 
+.billede-læsMere{
+    display: grid;
+    width: 18em;
+    height: auto;
 }
 
 /* Logo */
@@ -97,20 +114,41 @@
     padding: 10px;
 }
 
+/* lang regeltekst */
+.langtRegelsæt{
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: medium;
+}
+
+.regler-titel{
+    text-align: center;
+    font-size: xx-large;
+}
+
 /* Læs mere knap */
 .læsMere{
     width: 60%;
-    height: 50px;
+    height: 40px;
     margin-top: 20px;
+    margin-bottom: 20px;
     justify-self: center;
     align-self:center;
     background-color: var(--orange);
+    text-align: center;
+    padding-top: 10px;
 }
 
 
-/* Generelt buttons */
+/* Generelt buttons og anchors*/
 button{
-    border-radius: 1px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+a{
+    border-radius: 10px;
     font-weight: bold;
 }
 
