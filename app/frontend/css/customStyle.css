@@ -6,7 +6,6 @@
     grid-template-areas:
             "box-1 box-1"
             "box-2 box-3";
-    background-color: var(--background);
     border: 1px solid;
     border-radius: 5px;
     max-width: 1000px;
@@ -18,10 +17,10 @@
     display: grid;
     grid-gap: 10px;
     grid-template-areas:
+            "box-0 box-0"
             "box-1 box-1"
             "box-2 box-3"
             "box-4 box-4";
-    background-color: var(--background);
 }
 
 .titel{
@@ -35,9 +34,10 @@
 }
 
 .billede-læsMere{
-    display: grid;
+    display: inline-grid;
     width: 18em;
     height: auto;
+    align-content: center;
 }
 
 /* Logo */
@@ -93,24 +93,37 @@
     background-color: var(--box);
     align-self: center;
     text-align: center;
-    border: 1px solid;
-    border-radius: 5px;
+    border-style: ridge;
+    border-width: 3px;
     width: 100%;
-    color: var(--beige);
+    color: var(--text);
     border-color: var(--faded);
 }
 
 /* Container for kort regelsæt og læs mere knap */
-.regelsætContainer{
+.kortRegelsætContainer{
     display: flex;
     flex-direction: column;
     background-color: var(--box);
-    border: 1px solid;
-    border-radius: 5px;
+    border-style: ridge;
+    border-width: 3px;
     align-self: center;
     gap: 5px;
-    color: var(--beige);
+    color: var(--text);
     border-color: var(--faded);
+}
+
+.langtRegelsætContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--box);
+    border-style: ridge;
+    border-width: 3px;
+    align-self: center;
+    gap: 5px;
+    color: var(--text);
+    border-color: var(--faded);
+    margin: 20px;
 }
 
 /* kort regeltekst */
@@ -124,8 +137,8 @@
 /* lang regeltekst */
 .langtRegelsæt{
     text-align: justify;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     font-size: medium;
 }
 
@@ -136,21 +149,27 @@
 }
 
 /* Læs mere knap */
-.læsMere{
+.læsMereLink{
     width: 60%;
     height: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
     justify-self: center;
     align-self:center;
-    background-color: var(--faded);
+    background-color: var(--button);
     text-align: center;
     padding-top: 10px;
-    color: var(--beige);
+    color: var(--text);
+    border-color: var(--faded);
+    border: 1px solid;
+    border-radius: 5px;
 }
 
 .tilbage-knap{
-
+    color: var(--text);
+    padding: 0px 7px 2px 7px;
+    width: fit-content;
+    margin: 5px 5px 5px 5px;
 }
 
 /* Generelt buttons og anchors*/

@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="../css/colors.css">
     <link rel="stylesheet" href="../css/Style.css">
     <link rel="stylesheet" href="../css/customStyle.css">
+    <link rel="stylesheet" href="../css/beertoggle.css">
 </head>
 <body>
 
 
 <!-- Container for info om spillet -->
-<div class="infoVindue">
+<div class="infoVindue background">
     <!-- Titel på spillet -->
     <h2 class="titel" style="grid-area: box-1">Titel</h2>
 
@@ -28,10 +29,47 @@
             <button class="Spil">Spil</button>
 
             <!-- Container til drukregler checkbox og label -->
-            <div class="drukregler">
-                <input type="checkbox" id="Drukregler" name="Drukregler" value="Ja">
-                <label for="Drukregler" id="drukreglerLabel"> Drukregler </label>
+            <div class="stage">
+                <div class="switch" role="switch" aria-checked="true" aria-label="Beer glass toggle" tabindex="0" data-state="full" id="beerSwitch">
+                    <svg viewBox="0 0 150 210">
+                        <defs>
+                            <clipPath id="glassClip">
+                                <path d="M40 20 L110 20 L102 190 Q102 200 92 200 L58 200 Q48 200 48 190 Z"/>
+                            </clipPath>
+                            <linearGradient id="liquidGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="var(--amber-light)"/>
+                                <stop offset="100%" stop-color="var(--amber-dark)"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- glass shadow on ground -->
+                        <ellipse cx="75" cy="204" rx="34" ry="6" fill="var(--glass-shadow)"/>
+
+                        <!-- contents, clipped to glass interior -->
+                        <g clip-path="url(#glassClip)">
+                            <rect class="liquid" x="40" y="45" width="70" height="155" fill="url(#liquidGrad)"/>
+                            <circle class="bubble b1" cx="65" cy="150" r="2.2" fill="#fff6df"/>
+                            <circle class="bubble b2" cx="82" cy="160" r="1.6" fill="#fff6df"/>
+                            <circle class="bubble b3" cx="72" cy="140" r="1.8" fill="#fff6df"/>
+                            <path class="foam" d="M38 45 Q45 30 55 42 Q62 26 75 40 Q85 24 95 40 Q104 30 112 45 L112 58 L38 58 Z" fill="var(--foam)"/>
+                        </g>
+
+                        <!-- glass outline on top -->
+                        <path class="glass-outline" d="M40 20 L110 20 L102 190 Q102 200 92 200 L58 200 Q48 200 48 190 Z"
+                              fill="none" stroke="#d8dee6" stroke-width="3" stroke-linejoin="round"/>
+
+                        <!-- handle -->
+                        <path d="M110 55 Q140 55 140 90 Q140 120 110 118"
+                              fill="none" stroke="#d8dee6" stroke-width="3" stroke-linecap="round"/>
+
+                        <!-- shine -->
+                        <path class="glass-shine" d="M50 28 L46 178" stroke="var(--glass-line)" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="label" id="beerLabel">tap the glass</div>
             </div>
+
+            <script src="../js/beertoggle.js"></script>
 
         </div>
     </div>
@@ -51,7 +89,7 @@
         </div>
 
         <!-- Container til kort regelsæt og læs mere knap -->
-        <div class="regelsætContainer">
+        <div class="kortRegelsætContainer">
 
             <p class="kortRegelsæt">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere ipsum vel tortor porttitor, sed
@@ -63,7 +101,7 @@
 
         </div>
 
-        <a href="spilLæsMere.html" class="læsMere">Læs Mere</a>
+        <a href="spilLæsMere.html" class="læsMereLink">Læs Mere</a>
 
     </div>
 
