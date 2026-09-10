@@ -5,4 +5,14 @@
     --red: #dc4712;
     --beige: #f1e9e3;
     --orange: #ee712b;
+
+
+    /* Bodega-farver*/
+    --background: #3A2118;
+    --box: #5A3424;
+    --highlight: #D49A32;
+    --faded: #A87935;
+    --button: #243C32;
+    --subtle: #7A2925;
+    --text: #D8C49A;
 }
