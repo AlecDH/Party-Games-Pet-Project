@@ -13,7 +13,7 @@
 
 .læsMereVindue{
     margin: auto;
-    align-items: start;
+    align-items: center;
     display: grid;
     grid-gap: 10px;
     grid-template-areas:
@@ -49,7 +49,7 @@
     object-fit: contain;
 
     justify-self: center;
-    align-self: start;
+    align-self: center;
 }
 
 /* Grouping af spil knap og drukregel checkbox */
