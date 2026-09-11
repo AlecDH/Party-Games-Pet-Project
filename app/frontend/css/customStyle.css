@@ -17,15 +17,18 @@
     display: grid;
     grid-gap: 10px;
     grid-template-areas:
-            "box-0 box-0"
-            "box-1 box-1"
-            "box-2 box-3"
-            "box-4 box-4";
+            "box-0 box-0 box-0"
+            "box-1 box-1 box-1"
+            "box-2 box-3 box-4"
+            "box-5 box-5 box-5";
 }
 
 .titel{
     text-align: center;
     color: var(--text);
+    font-family: UnifrakturCook, Old English Text MT, fantasy;
+    font-size: 100px;
+    margin: -25px;
 }
 
 /* Venstre side */
@@ -34,10 +37,10 @@
 }
 
 .billede-læsMere{
-    display: inline-grid;
-    width: 18em;
-    height: auto;
+    display: grid;
     align-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 /* Logo */
@@ -101,7 +104,7 @@
 }
 
 /* Container for kort regelsæt og læs mere knap */
-.regelsætContainer{
+.kortRegelsætContainer{
     display: flex;
     flex-direction: column;
     background-color: var(--box);
@@ -111,11 +114,10 @@
     gap: 5px;
     color: var(--text);
     border-color: var(--faded);
+    width: 100%;
 }
 
-.regelsætContainer{
-    display: flex;
-    flex-direction: column;
+.langtRegelsætContainer{
     background-color: var(--box);
     border-style: ridge;
     border-width: 3px;
@@ -123,6 +125,7 @@
     gap: 5px;
     color: var(--text);
     border-color: var(--faded);
+    width: 1fr;
     margin: 20px;
 }
 
@@ -160,9 +163,11 @@
     text-align: center;
     padding-top: 10px;
     color: var(--text);
+    border-style: ridge;
+    border-width: 3px;
     border-color: var(--faded);
-    border: 1px solid;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 .tilbage-knap{
@@ -176,11 +181,9 @@
 button{
     border-radius: 10px;
     font-weight: bold;
-}
-
-a{
-    border-radius: 10px;
-    font-weight: bold;
+    border-style: ridge;
+    border-width: 3px;
+    border-color: var(--faded);
 }
 
 /* test til at visualisere divs */

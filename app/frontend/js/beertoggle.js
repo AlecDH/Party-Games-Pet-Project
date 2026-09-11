@@ -7,9 +7,17 @@ function setState(state){
     label.textContent = state === 'full' ? 'Drukregler: Til' : 'Drukregler: Fra';
     // Regelsæt erstattes med drukregler
     if (state === 'full') {
-        document.querySelector(".regelSæt").textContent = "Indsæt drukregler her";
+        document.querySelector(".regelSæt").textContent = "Indsæt drukregler her - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere ipsum vel tortor porttitor, sed\n" +
+            "                maximus nunc accumsan.\n" +
+            "                Nullam ac odio a urna sollicitudin vestibulum. Vivamus dignissim lacinia leo, nec dictum nisl sodales\n" +
+            "                ac.\n" +
+            "                Phasellus ut lorem in turpis congue pellentesque.";
     } else {
-        document.querySelector(".regelSæt").textContent = "Indsæt normale regler her";
+        document.querySelector(".regelSæt").textContent = "Indsæt normale regler her - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere ipsum vel tortor porttitor, sed\n" +
+            "                maximus nunc accumsan.\n" +
+            "                Nullam ac odio a urna sollicitudin vestibulum. Vivamus dignissim lacinia leo, nec dictum nisl sodales\n" +
+            "                ac.\n" +
+            "                Phasellus ut lorem in turpis congue pellentesque.";
     }
 }
 

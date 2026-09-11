@@ -17,56 +17,63 @@
     <!-- Titel på spillet -->
     <h2 class="titel" style="grid-area: box-1">Spil-titel</h2>
     <!-- Container for billedet i toppen -->
-    <div class="billede-læsMere" style="grid-area: box-2">
+    <div class="billede-læsMere" style="grid-area: box-3">
     <!-- Billede / Spillogo -->
         <img src="../assets/ek_logo.jpg" class="spilLogo" alt="Billede af spillets logo">
     </div>
 
-    <div class="stage" style="grid-area: box-2">
-        <div class="switch" role="switch" aria-checked="true" aria-label="Beer glass toggle" tabindex="0" data-state="full" id="beerSwitch">
-            <svg viewBox="0 0 150 210">
-                <defs>
-                    <clipPath id="glassClip">
-                        <path d="M40 20 L110 20 L102 190 Q102 200 92 200 L58 200 Q48 200 48 190 Z"/>
-                    </clipPath>
-                    <linearGradient id="liquidGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="var(--amber-light)"/>
-                        <stop offset="100%" stop-color="var(--amber-dark)"/>
-                    </linearGradient>
-                </defs>
+    <!-- Container til knapper i venstre side -->
+    <div class="infoVenstreKnapper" style="grid-area: box-2">
+        <!-- Øl-toggle -->
+        <div class="stage">
+            <div class="switch" role="switch" aria-checked="true" aria-label="Beer glass toggle" tabindex="0" data-state="full" id="beerSwitch">
+                <svg viewBox="0 0 150 210">
+                    <defs>
+                        <clipPath id="glassClip">
+                            <path d="M40 20 L110 20 L102 190 Q102 200 92 200 L58 200 Q48 200 48 190 Z"/>
+                        </clipPath>
+                        <linearGradient id="liquidGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="var(--amber-light)"/>
+                            <stop offset="100%" stop-color="var(--amber-dark)"/>
+                        </linearGradient>
+                    </defs>
 
-                <!-- glass shadow on ground -->
-                <ellipse cx="75" cy="204" rx="34" ry="6" fill="var(--glass-shadow)"/>
+                    <!-- glass shadow on ground -->
+                    <ellipse cx="75" cy="204" rx="34" ry="6" fill="var(--glass-shadow)"/>
 
-                <!-- contents, clipped to glass interior -->
-                <g clip-path="url(#glassClip)">
-                    <rect class="liquid" x="40" y="45" width="70" height="155" fill="url(#liquidGrad)"/>
-                    <circle class="bubble b1" cx="65" cy="150" r="2.2" fill="#fff6df"/>
-                    <circle class="bubble b2" cx="82" cy="160" r="1.6" fill="#fff6df"/>
-                    <circle class="bubble b3" cx="72" cy="140" r="1.8" fill="#fff6df"/>
-                    <path class="foam" d="M38 45 Q45 30 55 42 Q62 26 75 40 Q85 24 95 40 Q104 30 112 45 L112 58 L38 58 Z" fill="var(--foam)"/>
-                </g>
+                    <!-- contents, clipped to glass interior -->
+                    <g clip-path="url(#glassClip)">
+                        <rect class="liquid" x="40" y="45" width="70" height="155" fill="url(#liquidGrad)"/>
+                        <circle class="bubble b1" cx="65" cy="150" r="2.2" fill="#fff6df"/>
+                        <circle class="bubble b2" cx="82" cy="160" r="1.6" fill="#fff6df"/>
+                        <circle class="bubble b3" cx="72" cy="140" r="1.8" fill="#fff6df"/>
+                        <path class="foam" d="M38 45 Q45 30 55 42 Q62 26 75 40 Q85 24 95 40 Q104 30 112 45 L112 58 L38 58 Z" fill="var(--foam)"/>
+                    </g>
 
-                <!-- glass outline on top -->
-                <path class="glass-outline" d="M40 20 L110 20 L102 190 Q102 200 92 200 L58 200 Q48 200 48 190 Z"
-                      fill="none" stroke="#d8dee6" stroke-width="3" stroke-linejoin="round"/>
+                    <!-- glass outline on top -->
+                    <path class="glass-outline" d="M40 20 L110 20 L102 190 Q102 200 92 200 L58 200 Q48 200 48 190 Z"
+                        fill="none" stroke="#d8dee6" stroke-width="3" stroke-linejoin="round"/>
 
-                <!-- handle -->
-                <path d="M110 55 Q140 55 140 90 Q140 120 110 118"
-                      fill="none" stroke="#d8dee6" stroke-width="3" stroke-linecap="round"/>
+                    <!-- handle -->
+                    <path d="M110 55 Q140 55 140 90 Q140 120 110 118"
+                          fill="none" stroke="#d8dee6" stroke-width="3" stroke-linecap="round"/>
 
-                <!-- shine -->
-                <path class="glass-shine" d="M50 28 L46 178" stroke="var(--glass-line)" stroke-width="4" stroke-linecap="round"/>
-            </svg>
+                    <!-- shine -->
+                    <path class="glass-shine" d="M50 28 L46 178" stroke="var(--glass-line)" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="label" id="beerLabel">tap the glass</div>
         </div>
-        <div class="label" id="beerLabel">tap the glass</div>
+
+        <script src="../js/beertoggle.js" defer></script>
+
+        <!-- "Spil" knap -->
+        <button class="Spil">Spil</button>
+
     </div>
 
-    <script src="../js/beertoggle.js" defer></script>
-
-
     <!-- Container for info -->
-    <div class="infoHøjre" style="grid-area: box-3">
+    <div class="infoHøjre" style="grid-area: box-4">
 
         <!-- h3 overskrifter for spilinfo -->
         <div class="infoOverskrifter">
@@ -82,44 +89,9 @@
 
 
     <!-- Container til langt regelsæt -->
-    <div class="regelsætContainer" style="grid-area: box-4">
+    <div class="langtRegelsætContainer" style="grid-area: box-5">
       <div class="regler-titel">Regler</div>
-        <p class="regelSæt">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac nisl consectetur, efficitur massa eget,
-        convallis neque. Aliquam eleifend orci id diam maximus sodales. Nunc nec orci vel justo auctor vulputate
-        non eget lectus. Etiam et accumsan nisl. Nam eu libero lacinia, eleifend neque at, tempor ipsum. Mauris nec
-        felis dapibus, aliquet dui non, posuere elit. Phasellus tempus, ligula eget sagittis suscipit, mauris urna
-        lobortis nisl, eu vehicula elit quam et diam. Cras fringilla elit in nulla accumsan dictum. Donec iaculis
-        convallis orci, sed commodo ligula vulputate vitae. Integer arcu nulla, lacinia vel purus sit amet, mattis
-        sollicitudin felis. Donec quis hendrerit nulla. Quisque ac scelerisque leo. Nam vitae arcu in tellus commodo
-        finibus. Sed non semper enim. Duis vitae ipsum nisl. </br></br>
-
-        In a nisi sit amet tortor eleifend ultrices. Vivamus at dictum metus. Sed luctus lorem sed sapien cursus
-        condimentum. Integer ligula justo, sollicitudin nec tristique a, suscipit et felis. In sollicitudin suscipit
-        libero, quis fringilla magna lacinia non. Vestibulum ultricies vitae nisi et euismod. Sed venenatis, dolor quis
-        faucibus maximus, dui odio aliquet libero, sed posuere mauris elit quis ante. Curabitur ac volutpat felis. Duis
-        convallis ultrices facilisis. Maecenas malesuada aliquam est. Nunc vitae urna sed nibh ullamcorper placerat et in
-        orci. Ut quis dignissim ipsum.</br></br>
-
-        In orci tellus, iaculis eu venenatis sed, facilisis sit amet eros. Phasellus pretium magna semper magna
-        facilisis rutrum. Etiam a mollis urna. In feugiat ipsum lectus. Mauris fermentum porta dictum. Integer rutrum
-        lectus orci, a dignissim urna rutrum eget. In molestie lobortis efficitur. Fusce pharetra id nisi ac tempus.
-        Donec et fermentum massa. Nullam venenatis augue id tellus laoreet, nec eleifend lectus tempor. Phasellus tellus
-        urna, consectetur sit amet mi dignissim, porttitor volutpat nibh.</br></br>
-
-        Praesent at lectus ante. Nullam eget placerat arcu, ac aliquet libero. Maecenas augue ante, consequat nec
-        libero consequat, posuere vehicula velit. Donec ac sagittis lacus. Cras bibendum tincidunt ultrices. Curabitur
-        non commodo nunc. Nam vitae laoreet arcu, sed elementum dolor. Aliquam sapien justo, fermentum vitae ultrices
-        quis, pulvinar viverra massa. Proin dictum eu orci in ornare. Morbi accumsan aliquam urna, lacinia condimentum
-        orci convallis vitae. Nulla est lectus, semper sed volutpat et, interdum at enim. Pellentesque malesuada, lorem
-        vitae sagittis pretium, nisi nunc sodales magna, ac dictum nisi leo et eros.</br></br>
-
-        Aenean elementum arcu nisi, eget laoreet nunc dapibus ullamcorper. Phasellus tristique eu neque nec aliquam.
-        Sed vehicula ultricies tortor accumsan posuere. Integer porttitor leo et molestie convallis. In pharetra risus ut
-        sodales feugiat. Integer eu vehicula ligula, nec finibus diam. Praesent luctus quam eu ex sollicitudin auctor.
-        Mauris tempor elementum nisl, at interdum elit. Mauris sollicitudin dignissim felis, vitae malesuada augue.
-        Curabitur cursus vehicula sapien vel finibus. Ut faucibus luctus purus, in eleifend ex eleifend ac.
-        </p>
+        <p class="regelSæt"></p>
       </div>
     </div>
 </body>
