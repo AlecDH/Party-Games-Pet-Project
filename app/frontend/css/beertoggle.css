@@ -89,6 +89,7 @@ svg{
     letter-spacing:0.02em;
     color:#c9a876;
     transition: color .3s ease;
+    width: 86px;
 }
 
 .switch[data-state="empty"] ~ .label{ color:#8a7860; }

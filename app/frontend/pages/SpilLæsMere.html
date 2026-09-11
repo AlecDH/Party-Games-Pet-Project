@@ -19,7 +19,7 @@
     <!-- Container for billedet i toppen -->
     <div class="billede-læsMere" style="grid-area: box-3">
     <!-- Billede / Spillogo -->
-        <img src="../assets/ek_logo.jpg" class="spilLogo" alt="Billede af spillets logo">
+        <img class="spilLogo" alt="Picture pending">
     </div>
 
     <!-- Container til knapper i venstre side -->
@@ -65,8 +65,6 @@
             <div class="label" id="beerLabel">tap the glass</div>
         </div>
 
-        <script src="../js/beertoggle.js" defer></script>
-
         <!-- "Spil" knap -->
         <button class="Spil">Spil</button>
 
@@ -77,13 +75,13 @@
 
         <!-- h3 overskrifter for spilinfo -->
         <div class="infoOverskrifter">
-        <h3 class="infoFelt">x til x spillere</h3>
+        <h3 class="infoFelt" id="antalSpillere">x til x spillere</h3>
 
-        <h3 class="infoFelt">x terninger</h3>
+        <h3 class="infoFelt" id="materialer">x terninger</h3>
 
-        <h3 class="infoFelt">x minutter</h3>
+        <h3 class="infoFelt" id="varighed">x minutter</h3>
 
-        <h3 class="infoFelt">x/x stjerner</h3>
+        <h3 class="infoFelt" id="rating">x/x stjerner</h3>
         </div>
     </div>
 
@@ -94,5 +92,7 @@
         <p class="regelSæt"></p>
       </div>
     </div>
+
+    <script src="../js/SpilLæsMere.js" defer></script>
 </body>
 </html>
