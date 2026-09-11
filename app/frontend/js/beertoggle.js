@@ -5,6 +5,12 @@ function setState(state){
     sw.dataset.state = state;
     sw.setAttribute('aria-checked', state === 'full' ? 'true' : 'false');
     label.textContent = state === 'full' ? 'Drukregler: Til' : 'Drukregler: Fra';
+    // Regelsæt erstattes med drukregler
+    if (state === 'full') {
+        document.querySelector(".regelSæt").textContent = "Indsæt drukregler her";
+    } else {
+        document.querySelector(".regelSæt").textContent = "Indsæt normale regler her";
+    }
 }
 
 function toggle(){
@@ -19,4 +25,4 @@ sw.addEventListener('keydown', (e) => {
     }
 });
 
-setState('full');
+setState('empty');

@@ -101,7 +101,7 @@
 }
 
 /* Container for kort regelsæt og læs mere knap */
-.kortRegelsætContainer{
+.regelsætContainer{
     display: flex;
     flex-direction: column;
     background-color: var(--box);
@@ -113,7 +113,7 @@
     border-color: var(--faded);
 }
 
-.langtRegelsætContainer{
+.regelsætContainer{
     display: flex;
     flex-direction: column;
     background-color: var(--box);
@@ -127,7 +127,7 @@
 }
 
 /* kort regeltekst */
-.kortRegelsæt{
+.regelSæt{
     align-self: center;
 
     text-align: center;
@@ -135,7 +135,7 @@
 }
 
 /* lang regeltekst */
-.langtRegelsæt{
+.regelSæt{
     text-align: justify;
     padding-left: 20px;
     padding-right: 20px;
