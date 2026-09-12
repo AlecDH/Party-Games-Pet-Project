@@ -1,5 +1,7 @@
 var selection = "Meyer";
 
+console.log(selection)
+
 /* Loader alle spil, sammenligner selection med navnene og sætter info */
 async function loadGames(){
     const res = await fetch("../../data/spil.json");
@@ -7,16 +9,13 @@ async function loadGames(){
     displayInfo(data);
 }
 
-let regler = "regler";
-let drukregler = "drukregler";
-const reglerTekst = document.querySelector(".regelSæt")
-
 function displayInfo(data){
     const titel = document.querySelector(".titel");
     const antalSpillere = document.querySelector("#antalSpillere");
     const materialer = document.querySelector("#materialer");
     const varighed = document.querySelector("#varighed");
     const rating = document.querySelector("#rating");
+    const intro = document.querySelector(".intro")
 
     for (let game of data){
         if (game.name === selection){
@@ -24,9 +23,7 @@ function displayInfo(data){
             antalSpillere.textContent = game.minPlayers + " til " + game.maxPlayers + " spillere";
             materialer.textContent = game.materialsText;
             varighed.textContent = game.minDuration + " til " + game.maxDuration + " minutter";
-            drukregler = game.drinkingRules;
-            regler = game.rules;
-            reglerTekst.innerHTML = regler;
+            intro.innerHTML = game.intro;
         }
     }
 }
@@ -51,9 +48,9 @@ function setState(state){
     label.textContent = state === 'full' ? 'Drukregler: Til' : 'Drukregler: Fra';
     // Regelsæt erstattes med drukregler
     if (state === 'full') {
-        reglerTekst.innerHTML = drukregler;
+        /* Spillet påvirkes */
     } else {
-        reglerTekst.innerHTML = regler;
+        /* Spillet påvirkes */
     }
 }
 
@@ -70,13 +67,3 @@ sw.addEventListener('keydown', (e) => {
 });
 
 setState('empty');
-
-
-
-
-
-
-
-
-
-

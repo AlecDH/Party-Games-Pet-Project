@@ -69,8 +69,6 @@
                 <div class="label" id="beerLabel">tap the glass</div>
             </div>
 
-            <script src="../js/beertoggle.js"></script>
-
         </div>
     </div>
 
@@ -79,13 +77,13 @@
 
         <!-- h3 overskrifter for spilinfo -->
         <div class="infoOverskrifter">
-            <h3 class="infoFelt">x til x spillere</h3>
+            <h3 class="infoFelt" id="antalSpillere">x til x spillere</h3>
 
-            <h3 class="infoFelt">x terninger</h3>
+            <h3 class="infoFelt" id="materialer">x terninger</h3>
 
-            <h3 class="infoFelt">x minutter</h3>
+            <h3 class="infoFelt" id="varighed">x minutter</h3>
 
-            <h3 class="infoFelt">x/x stjerner</h3>
+            <h3 class="infoFelt" id="rating">x/x stjerner</h3>
         </div>
 
         <!-- Container til kort regelsæt og læs mere knap -->
@@ -105,8 +103,9 @@
 
     </div>
 
-</div>
+    <script src="../js/SpilPopup.js" defer></script>
 
+</div>
 
 </body>
 </html>
