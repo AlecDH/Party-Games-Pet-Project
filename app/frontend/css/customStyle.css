@@ -23,6 +23,42 @@
             "box-5 box-5 box-5";
 }
 
+.spilOversigt{
+    margin: auto;
+    align-items: center;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+            "box-1 box-2"
+            "box-3 box-4"
+            "box-5 box-6"
+            "box-7 box-8";
+}
+
+.spilFiltrer{
+    margin: auto;
+    align-items: center;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+            "box-1"
+            "box-2"
+            "box-3"
+            "box-4";
+}
+
+.oversigtVindue{
+    margin: auto;
+    align-items: center;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+            "box-0 box-0 box-0"
+            "box-1 box-2 box-2"
+            "box-1 box-2 box-2"
+            "box-1 box-2 box-2";
+}
+
 .titel{
     text-align: center;
     color: var(--text);
@@ -196,4 +232,28 @@ div{
     border-style: solid;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+
+    /* Dimmer baggrund ved at sætte alpha*/
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-content{
+    position: relative;
+    width: 80%;
+    height: 80%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.modal-content iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 
