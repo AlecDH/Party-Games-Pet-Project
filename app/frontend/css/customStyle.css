@@ -74,13 +74,14 @@
 
 /* Boksen med filtre*/
 .spilFiltre{
-    align-items: center;
+    align-items: start;
     display: flex;
     flex-direction: column;
     width: 20em;
     min-height: 10em;
     padding: 10px;
     background-color: var(--box);
+    color: var(--text);
 }
 
 
