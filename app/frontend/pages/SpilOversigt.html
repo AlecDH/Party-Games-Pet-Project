@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Spil Læs Mere</title>
-  <link rel="stylesheet" href="../css/colors.css">
-  <link rel="stylesheet" href="../css/Style.css">
-  <link rel="stylesheet" href="../css/customStyle.css">
-  <link rel="stylesheet" href="../css/beertoggle.css">
+    <meta charset="UTF-8">
+    <title>Spil Læs Mere</title>
+    <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/Style.css">
+    <link rel="stylesheet" href="../css/customStyle.css">
+    <link rel="stylesheet" href="../css/beertoggle.css">
 </head>
 <header class="background">
 
-  <!-- Titel på spillet -->
-  <h2 class="titel" style="grid-area: box-0">Spil-titel</h2>
+    <!-- Top bar -->
+    <div class="top-nav">
+        <div class="logo">
+            <img src="app/frontend/assets/ek_logo.jpg" alt="Logo"/>
+        </div>
+        <div class="søgContainer">
+            <input type="text" placeholder="Søg..." name="søg"/>
+            <button type="submit">Søg</button>
+        </div>
+        <div class="brugerLink">
+            <a>Log in</a>
+        </div>
+    </div>
 </header>
 
 <body>
-<div class="oversigtVindue">
-<div class="spilFiltrer" style="grid-area: box-1">
+<div class="oversigtContainer">
+    <div class="spilFiltre">
 
-
-
-</div>
-<div class="spilOversigt" style="grid-area: box-2">
-
-  <div id="spil">Spil 1</div>
-
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <button class="closeModalKnap">X</button>
-
-        <iframe id="modalIframe"></iframe>
 
     </div>
+    <div class="gridContainer">
 
-  </div>
+        <div class="spil">Spil 1</div>
+        <div class="spil">Spil 2</div>
+        <div class="spil">Spil 3</div>
+        <div class="spil">Spil 4</div>
+        <div class="spil">Spil 5</div>
+        <div class="spil">Spil 6</div>
+        <div class="spil">Spil 7</div>
+        <div class="spil">Spil 8</div>
+        <div class="spil">Spil 9</div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <button class="closeModalKnap">X</button>
+
+                <iframe id="modalIframe"></iframe>
+
+            </div>
+        </div>
 
 
-
-</div>
+    </div>
 
 </div>
 

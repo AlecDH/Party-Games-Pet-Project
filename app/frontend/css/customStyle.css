@@ -23,41 +23,67 @@
             "box-5 box-5 box-5";
 }
 
-.spilOversigt{
-    margin: auto;
+.top-nav{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-areas:
-            "box-1 box-2"
-            "box-3 box-4"
-            "box-5 box-6"
-            "box-7 box-8";
+    height: 6em;
+    color: var(--text);
 }
 
-.spilFiltrer{
-    margin: auto;
-    align-items: center;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-areas:
-            "box-1"
-            "box-2"
-            "box-3"
-            "box-4";
+.top-nav input[type=text]{
+    padding: 6px;
+    font-size: 17px;
+    border: none;
 }
 
-.oversigtVindue{
+.top-nav .søgContainer button{
+    padding: 6px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hele oversigten med filtre og spilgrid*/
+.oversigtContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 6em;
+}
+
+/* Selve spilgriddet*/
+.gridContainer{
+    display: grid;
+    grid-template-columns: 20em 20em 20em;
+    gap: 1em;
     margin: auto;
     align-items: center;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-areas:
-            "box-0 box-0 box-0"
-            "box-1 box-2 box-2"
-            "box-1 box-2 box-2"
-            "box-1 box-2 box-2";
 }
+
+/* Hvert spil*/
+.spil{
+    padding: 2em;
+    background-color: var(--subtle);
+    color: var(--text);
+    text-align: center;
+    border-radius: 8px;
+    font-size: 2rem;
+}
+
+/* Boksen med filtre*/
+.spilFiltre{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    min-height: 10em;
+    padding: 10px;
+    background-color: var(--box);
+}
+
+
 
 .titel{
     text-align: center;
@@ -104,7 +130,7 @@
 }
 
 /* "Spil" knap" */
-.Spil{
+.spilKnap{
     width: 60%;
     height: 70%;
     justify-self: center;

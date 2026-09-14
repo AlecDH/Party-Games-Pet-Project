@@ -1,7 +1,7 @@
 const modal = document.getElementById("modal");
 const iframe = document.getElementById("modalIframe");
 const closeButton = document.getElementById("closeModalKnap");
-const spil = document.getElementById("spil");
+const spil = document.querySelector(".spil");
 
 function closeModal() {
 
