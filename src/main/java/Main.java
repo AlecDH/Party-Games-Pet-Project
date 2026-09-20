@@ -5,6 +5,8 @@ import io.javalin.rendering.template.JavalinThymeleaf;
 public class Main {
 	public static void main(String[] args){
 		var app = Javalin.create(config -> {
+			config.fileRenderer(new JavalinThymeleaf());
+			UserController.setRoutes(config);
 			config.routes.get("/login", ctx -> login(ctx));
 			//.. anden konfiguration
 			config.fileRenderer(new JavalinThymeleaf());
