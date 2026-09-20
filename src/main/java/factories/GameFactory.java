@@ -16,7 +16,7 @@ public class GameFactory {
         List<Game> gameList = new ArrayList<>();
 
         for (int i = 0; i<amount; i++){
-            gameList.add(new Game(""+i,i));
+            gameList.add(new Game(""+(i+1),(i+1)));
         }
 
         return gameList;

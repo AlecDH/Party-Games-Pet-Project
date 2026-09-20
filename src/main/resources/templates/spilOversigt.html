@@ -3,25 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Spil Læs Mere</title>
-    <link rel="stylesheet" href="css/colors.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/customStyle.css">
-    <link rel="stylesheet" href="css/beertoggle.css">
+    <link rel="stylesheet" th:href="@{/css/colors.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/customStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/beertoggle.css}">
 </head>
 <header class="background">
 
     <!-- Top bar -->
     <div class="top-nav">
         <div class="logo">
-            <img src="assets/ek_logo.jpg" alt="Logo"/>
+            <img src="/assets/ek_logo.jpg" alt="Logo"/>
         </div>
         <div class="søgContainer">
             <input type="text" placeholder="Søg..." name="søg"/>
             <button type="submit">Søg</button>
         </div>
-        <div class="brugerLink">
-            <a>Log in</a>
+
+        <div class="brugerLink" th:if="${loggedInUser == null}">
+            <form method="POST" action="/login">
+
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+
+                <input type="submit" value="Log ind">
+
+
+            </form>
         </div>
+        <div class="brugerLink" th:if="${loggedInUser != null}">
+            <p>Welcome <span th:text="${loggedInUser.username}">username</span></p>
+        </div>
+
     </div>
 </header>
 
@@ -74,15 +89,8 @@
     </div>
     <div class="gridContainer">
 
-        <div class="spil">Spil 1</div>
-        <div class="spil">Spil 2</div>
-        <div class="spil">Spil 3</div>
-        <div class="spil">Spil 4</div>
-        <div class="spil">Spil 5</div>
-        <div class="spil">Spil 6</div>
-        <div class="spil">Spil 7</div>
-        <div class="spil">Spil 8</div>
-        <div class="spil">Spil 9</div>
+        <div class="spil" th:each="game : ${gameList}" th:text="${game.name}"></div>
+
 
         <div id="modal" class="modal">
             <div class="modal-content">
@@ -99,6 +107,6 @@
 </div>
 
 
-<script src="js/spilOversigt.js" defer></script>
+<script src="/js/spilOversigt.js" defer></script>
 </body>
 </html>
