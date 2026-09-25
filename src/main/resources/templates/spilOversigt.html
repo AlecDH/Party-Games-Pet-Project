@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Spil Læs Mere</title>
-    <link rel="stylesheet" th:href="@{/css/colors.css}">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-    <link rel="stylesheet" th:href="@{/css/customStyle.css}">
-    <link rel="stylesheet" th:href="@{/css/beertoggle.css}">
+    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/customStyle.css">
+    <link rel="stylesheet" href="/css/beertoggle.css">
 </head>
 <header class="background">
 
     <!-- Top bar -->
     <div class="top-nav">
         <div class="logo">
-            <img src="/assets/ek_logo.jpg" alt="Logo"/>
+            <img class="logoImage" src="/assets/logo.png" alt="Logo"/>
         </div>
         <div class="søgContainer">
             <input type="text" placeholder="Søg..." name="søg"/>
@@ -33,6 +33,7 @@
 
             </form>
         </div>
+
         <div class="brugerLink" th:if="${loggedInUser != null}">
             <p>Welcome <span th:text="${loggedInUser.username}">username</span></p>
         </div>

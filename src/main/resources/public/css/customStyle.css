@@ -45,6 +45,11 @@
     cursor: pointer;
 }
 
+.logoImage{
+    height: 6em;
+    width: auto;
+}
+
 /* Hele oversigten med filtre og spilgrid*/
 .oversigtContainer{
     display: flex;
