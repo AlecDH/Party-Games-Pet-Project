@@ -63,7 +63,9 @@ public class UserController {
             ctx.sessionAttribute("loggedInUser", user);
             ctx.redirect("/");
         } catch (UserAlreadyExistsException e){
+            // Tror måske register.html bør være en template som opdateres med error-message her
             ctx.attribute("error-message", e.getMessage());
+            // Her ville jeg så kunne redirecte tilbage til /register
             ctx.result(e.getMessage());
         }
     }
