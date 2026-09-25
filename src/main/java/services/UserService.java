@@ -8,9 +8,10 @@ import java.util.List;
 public class UserService {
 
     List<User> userList;
+    UserFactory userFactory;
 
     public UserService(){
-        UserFactory userFactory = new UserFactory();
+        userFactory = new UserFactory();
         userList = userFactory.createUsers();
     }
 
@@ -24,6 +25,21 @@ public class UserService {
 
         }
 
+        return user;
+    }
+
+    public boolean findUser(String username){
+        for (User u : userList){
+            if(u.getUsername().equalsIgnoreCase(username)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public User createUser(String username, String password){
+        User user = userFactory.createUser(username, password);
+        userList.add(user);
         return user;
     }
 

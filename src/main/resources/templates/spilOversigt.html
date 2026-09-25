@@ -20,23 +20,27 @@
             <button type="submit">Søg</button>
         </div>
 
-        <div class="brugerLink" th:if="${loggedInUser == null}">
+        <!-- Opret/Log ind formular-->
+
+        <div class="brugerLink" th:if="${session.loggedInUser == null}">
             <form method="POST" action="/login">
 
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username">
+                <label for="username">Brugernavn</label>
+                <input type="text" id="username" placeholder="Brugernavn" name="username" required>
+
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" placeholder="Password" name="password" required>
 
                 <input type="submit" value="Log ind">
-
-
             </form>
+            <a href="/register.html" class="registerButton">Opret bruger</a>
         </div>
 
-        <div class="brugerLink" th:if="${loggedInUser != null}">
-            <p>Welcome <span th:text="${loggedInUser.username}">username</span></p>
+        <div class="brugerLink" th:unless="${session.loggedInUser == null}">
+            <p>Welcome <span th:text="${session.loggedInUser.username}">username</span></p>
+            <form method="post" action="/logout"><button type="submit">Log ud</button></form>
         </div>
+
 
     </div>
 </header>

@@ -18,4 +18,8 @@ public class UserFactory {
 
         return userList;
     }
+
+    public User createUser(String username, String password){
+        return new User(username, password);
+    }
 }
