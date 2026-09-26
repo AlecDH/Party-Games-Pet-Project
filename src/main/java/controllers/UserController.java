@@ -2,6 +2,8 @@ package controllers;
 
 import entities.Game;
 import entities.User;
+import exceptions.IncorrectLoginInfoException;
+import exceptions.PasswordsDontMatchException;
 import exceptions.UserAlreadyExistsException;
 import io.javalin.config.JavalinConfig;
 import io.javalin.http.Context;
@@ -18,6 +20,7 @@ public class UserController {
     public static void setRoutes(JavalinConfig config){
         config.routes.get("/", ctx -> renderFrontPage(ctx));
         config.routes.post("/login", ctx -> login(ctx));
+        config.routes.get("/registerButton", ctx -> renderRegisterPage(ctx));
         config.routes.post("/register", ctx -> register(ctx));
         config.routes.post("/logout", ctx -> logout(ctx));
     }
@@ -34,9 +37,14 @@ public class UserController {
         String password = ctx.formParam("password");
 
         User user = userService.login(username, password);
-
-        if (user != null){
+        try {
+            if (user == null){
+                throw new IncorrectLoginInfoException("Forkert brugernavn/password");
+            }
+            ctx.sessionAttribute("errorMessage", null);
             ctx.sessionAttribute("loggedInUser", user);
+        } catch (IncorrectLoginInfoException e){
+            ctx.sessionAttribute("errorMessage", e.getMessage());
         }
         ctx.redirect("/");
     }
@@ -46,27 +54,30 @@ public class UserController {
         ctx.redirect("/");
     }
 
+    private static void renderRegisterPage(Context ctx){
+        ctx.attribute("errorMessage", null);
+        ctx.render("templates/register.html");
+    }
+
     private static void register(Context ctx){
         String username = ctx.formParam("username");
         String password = ctx.formParam("password");
         String repeatedPassword = ctx.formParam("password-repeat");
 
         try {
-            // Tjek først om password og repeated password er ens og kast evt. en "passwords don't match exception"
-            //--
-            //--
-
+            if (!password.equals(repeatedPassword)){
+                throw new PasswordsDontMatchException("Gentagne password matcher ikke");
+            }
             if (userService.findUser(username)){
                 throw new UserAlreadyExistsException("Det valgte brugernavn er ikke tilgængeligt");
             }
+            ctx.sessionAttribute("errorMessage", null);
             User user = userService.createUser(username, password);
             ctx.sessionAttribute("loggedInUser", user);
             ctx.redirect("/");
-        } catch (UserAlreadyExistsException e){
-            // Tror måske register.html bør være en template som opdateres med error-message her
-            ctx.attribute("error-message", e.getMessage());
-            // Her ville jeg så kunne redirecte tilbage til /register
-            ctx.result(e.getMessage());
+        } catch (UserAlreadyExistsException | PasswordsDontMatchException e){
+            ctx.sessionAttribute("errorMessage", e.getMessage());
+            ctx.redirect("/registerButton");
         }
-    }
+	}
 }

@@ -18,8 +18,12 @@
         <label for="password-repeat">Repeat password</label>
         <input type="password" id="password-repeat" placeholder="Gentag password" name="password-repeat" required>
 
-        <button type="submit" class="">Opret bruger</button>
+        <button type="submit">Opret bruger</button>
     </form>
+    <div class="errorMessage" th:unless="${session.errorMessage == null}">
+        <p th:text="${session.errorMessage}">Fejlbesked</p>
+    </div>
+
 </div>
 
 </body>
