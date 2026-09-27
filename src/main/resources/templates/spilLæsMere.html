@@ -15,7 +15,7 @@
     <!-- Tilbage knap -->
     <a href="spilPopup.html" class="tilbage-knap" style="grid-area: box-0">Tilbage</a>
     <!-- Titel på spillet -->
-    <h2 class="titel" style="grid-area: box-1">Spil-titel</h2>
+    <h2 class="titel" style="grid-area: box-1" th:text="game.name">Spil-titel</h2>
     <!-- Container for billedet i toppen -->
     <div class="billede-læsMere" style="grid-area: box-3">
     <!-- Billede / Spillogo -->
@@ -75,11 +75,11 @@
 
         <!-- h3 overskrifter for spilinfo -->
         <div class="infoOverskrifter">
-        <h3 class="infoFelt" id="antalSpillere">x til x spillere</h3>
+        <h3 class="infoFelt" id="antalSpillere" th:text="game.playerCapacity">x til x spillere</h3>
 
-        <h3 class="infoFelt" id="materialer">x terninger</h3>
+        <h3 class="infoFelt" id="materialer" th:text="game.materialsText">x terninger</h3>
 
-        <h3 class="infoFelt" id="varighed">x minutter</h3>
+        <h3 class="infoFelt" id="varighed" th:text="game.duration">x minutter</h3>
 
         <h3 class="infoFelt" id="rating">x/x stjerner</h3>
         </div>

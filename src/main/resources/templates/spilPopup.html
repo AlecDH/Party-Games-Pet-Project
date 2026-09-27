@@ -14,7 +14,7 @@
 <!-- Container for info om spillet -->
 <div class="infoVindue background">
     <!-- Titel på spillet -->
-    <h2 class="titel" style="grid-area: box-1">Titel</h2>
+    <h2 class="titel" style="grid-area: box-1" th:text="${game.name}">Titel</h2>
 
     <!-- Container for info i venstre side -->
     <div class="infoVenstre" style="grid-area: box-2">
@@ -77,11 +77,11 @@
 
         <!-- h3 overskrifter for spilinfo -->
         <div class="infoOverskrifter">
-            <h3 class="infoFelt" id="antalSpillere">x til x spillere</h3>
+            <h3 class="infoFelt" id="antalSpillere" th:text="game.playerCapacity">x til x spillere</h3>
 
-            <h3 class="infoFelt" id="materialer">x terninger</h3>
+            <h3 class="infoFelt" id="materialer" th:text="game.materialsText">x terninger</h3>
 
-            <h3 class="infoFelt" id="varighed">x minutter</h3>
+            <h3 class="infoFelt" id="varighed" th:text="game.duration">x minutter</h3>
 
             <h3 class="infoFelt" id="rating">x/x stjerner</h3>
         </div>
@@ -89,7 +89,7 @@
         <!-- Container til kort regelsæt og læs mere knap -->
         <div class="kortRegelsætContainer">
 
-            <p class="intro">
+            <p class="intro" th:text="game.introText">
                 Indsæt normale regler her - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere ipsum vel tortor porttitor, sed
                 maximus nunc accumsan.
                 Nullam ac odio a urna sollicitudin vestibulum. Vivamus dignissim lacinia leo, nec dictum nisl sodales
