@@ -11,7 +11,7 @@ function closeModal() {
 }
 
 function openModal() {
-    iframe.src = "spilPopup.html";
+    iframe.src = "spilPopup";
     modal.style.display = "flex";
 }
 

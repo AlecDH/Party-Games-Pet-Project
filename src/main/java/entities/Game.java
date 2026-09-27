@@ -1,14 +1,15 @@
 package entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
 
-    private List<String> materials = new ArrayList<>();
-    private List<String> categories = new ArrayList<>();
-    private List<Integer> playerCapacity = new ArrayList<>();
-    private List<Integer> duration = new ArrayList<>();
+    private List<String> materials;
+    private List<String> categories;
+    private int minPlayers;
+    private int maxPlayers;
+    private int minDuration;
+    private int maxDuration;
     private String materialsText;
     private String name;
     private String standardRules;
@@ -21,14 +22,6 @@ public class Game {
 
     public List<String> getCategories() {
         return categories;
-    }
-
-    public List<Integer> getPlayerCapacity() {
-        return playerCapacity;
-    }
-
-    public List<Integer> getDuration() {
-        return duration;
     }
 
     public String getMaterialsText() {
@@ -51,21 +44,35 @@ public class Game {
         return introText;
     }
 
-    public Game(String placeholderText, int placeholderNumber){
-        materials.add(placeholderText);
+    public int getMinPlayers() {
+        return minPlayers;
+    }
 
-        categories.add(placeholderText);
+    public int getMaxPlayers() {
+        return maxPlayers;
+    }
 
-        playerCapacity.add(placeholderNumber);
-        playerCapacity.add(placeholderNumber);
+    public int getMinDuration() {
+        return minDuration;
+    }
 
-        duration.add(placeholderNumber);
-        duration.add(placeholderNumber);
+    public int getMaxDuration() {
+        return maxDuration;
+    }
 
-        materialsText = placeholderText;
-        name = "Spil " + placeholderText;
-        standardRules = placeholderText;
-        drinkingRules = placeholderText;
-        introText = placeholderText;
+    public Game(String name, int minDuration, int maxDuration, int minPlayers, int maxPlayers, List<String> categories, List<String> materials, String materialsText, String standardRules, String drinkingRules, String introText){
+        this.materials = materials;
+        this.categories = categories;
+
+        this.minPlayers = minPlayers;
+        this.maxPlayers = maxPlayers;
+        this.minDuration = minDuration;
+        this.maxDuration = maxDuration;
+
+        this.materialsText = materialsText;
+        this.name = name;
+        this.standardRules = standardRules;
+        this.drinkingRules = drinkingRules;
+        this.introText = introText;
     }
 }

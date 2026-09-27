@@ -15,8 +15,19 @@ public class GameFactory {
     public List<Game> createGames(int amount){
         List<Game> gameList = new ArrayList<>();
 
-        for (int i = 0; i<amount; i++){
-            gameList.add(new Game(""+(i+1),(i+1)));
+        List<String> materials = new ArrayList<>();
+        materials.add("Terninger");
+        materials.add("Raflebæger");
+
+        List<String> categories = new ArrayList<>();
+        categories.add("Terningespil");
+
+        for (int i = 0; i < 9 ; i++){
+        gameList.add(new Game("Snyd", 5,20,2,99, categories, materials,
+                "Raflebæger + 4 eller 5 terninger pr. person",
+                "Standardregler goes here",
+                "Drukregler goes here",
+                "Introtext goes here"));
         }
 
         return gameList;

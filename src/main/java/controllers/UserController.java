@@ -23,13 +23,15 @@ public class UserController {
         config.routes.get("/registerButton", ctx -> renderRegisterPage(ctx));
         config.routes.post("/register", ctx -> register(ctx));
         config.routes.post("/logout", ctx -> logout(ctx));
+        config.routes.get("/spilPopup", ctx -> renderSpilpopup(ctx));
+        config.routes.get("/spilL%C3%A6sMere", ctx -> redirectLæsmere(ctx));
     }
 
     private static void renderFrontPage(Context ctx) {
         List<Game> gameList = gameService.getGameList();
 
         ctx.attribute("gameList", gameList);
-        ctx.render("templates/spilOversigt.html");
+        ctx.render("spiloversigt");
     }
 
     private static void login(Context ctx){
@@ -56,7 +58,7 @@ public class UserController {
 
     private static void renderRegisterPage(Context ctx){
         ctx.attribute("errorMessage", null);
-        ctx.render("templates/register.html");
+        ctx.render("register");
     }
 
     private static void register(Context ctx){
@@ -80,4 +82,15 @@ public class UserController {
             ctx.redirect("/registerButton");
         }
 	}
+
+    private static void renderSpilpopup(Context ctx){
+        Game game = gameService.getGameList().getFirst();
+
+        ctx.attribute("game", game);
+        ctx.render("spilPopup");
+    }
+
+    private static void redirectLæsmere(Context ctx){
+        ctx.render("spilLæsMere");
+    }
 }

@@ -100,8 +100,12 @@
     </div>
     <div class="gridContainer">
 
-        <div class="spil" th:each="game : ${gameList}" th:text="${game.name}"></div>
+        <div class="spil" th:each="game : ${gameList}">
+        <div th:text="${game.name}">game name</div>
+        <div th:text="${game.minPlayers}">game name</div>
+        <div th:text="${game.maxPlayers}">game name</div>
 
+        </div>
 
         <div id="modal" class="modal">
             <div class="modal-content">
