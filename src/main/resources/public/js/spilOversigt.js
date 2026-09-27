@@ -4,7 +4,6 @@ const closeButton = document.getElementById("closeModalKnap");
 const alleSpil = document.querySelectorAll(".spil");
 
 function closeModal() {
-
     modal.style.display = "none";
 
     iframe.src = "";

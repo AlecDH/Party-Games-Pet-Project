@@ -25,6 +25,8 @@ public class GameController {
     private static void renderInfo(Context ctx) {
         String name = ctx.queryParam("game");
         Game game = GameService.getGame(name);
+        System.out.println(game.getName());
+        game = GameService.getGameList().getFirst();
         ctx.attribute("game", game);
         ctx.render("/spilLæsMere");
     }

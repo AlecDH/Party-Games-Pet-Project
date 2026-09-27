@@ -15,7 +15,7 @@
     <!-- Tilbage knap -->
     <a href="/" class="tilbage-knap" style="grid-area: box-0">Tilbage</a>
     <!-- Titel på spillet -->
-    <h2 class="titel" style="grid-area: box-1" th:text="game.name">Spil-titel</h2>
+    <h2 class="titel" style="grid-area: box-1" th:text="${game.name}">Spil-titel</h2>
     <!-- Container for billedet i toppen -->
     <div class="billede-læsMere" style="grid-area: box-3">
     <!-- Billede / Spillogo -->
@@ -75,11 +75,11 @@
 
         <!-- h3 overskrifter for spilinfo -->
         <div class="infoOverskrifter">
-        <h3 class="infoFelt" id="antalSpillere" th:text="game.playerCapacity">x til x spillere</h3>
+        <h3 class="infoFelt" id="antalSpillere"><span th:text="${game.minPlayers}">x</span> til <span th:text="${game.maxPlayers}">x</span> spillere</h3>
 
-        <h3 class="infoFelt" id="materialer" th:text="game.materialsText">x terninger</h3>
+        <h3 class="infoFelt" id="materialer" th:text="${game.materialsText}">x terninger</h3>
 
-        <h3 class="infoFelt" id="varighed" th:text="game.duration">x minutter</h3>
+        <h3 class="infoFelt" id="varighed"><span th:text="${game.minDuration}">x</span> til <span th:text="${game.maxDuration}">x</span> minutter</h3>
 
         <h3 class="infoFelt" id="rating">x/x stjerner</h3>
         </div>
@@ -88,11 +88,11 @@
 
     <!-- Container til langt regelsæt -->
     <div class="langtRegelsætContainer" style="grid-area: box-5">
-      <div class="regler-titel">Regler</div>
+      <div class="regler-titel" th:text="${game.standardRules}">Regler</div>
         <p class="regelSæt"></p>
       </div>
     </div>
 
-    <script src="../public/js/spilLæsMere.js" defer></script>
+    <script src="/js/gameReadMore.js" defer></script>
 </body>
 </html>

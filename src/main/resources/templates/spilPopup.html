@@ -77,19 +77,19 @@
 
         <!-- h3 overskrifter for spilinfo -->
         <div class="infoOverskrifter">
-            <h3 class="infoFelt" id="antalSpillere" th:text="${game.minPlayers}">x til x spillere</h3>
+            <h3 class="infoFelt" id="antalSpillere"><span th:text="${game.minPlayers}">x</span> til <span th:text="${game.maxPlayers}">x</span> spillere</h3>
 
             <h3 class="infoFelt" id="materialer" th:text="${game.materialsText}">x terninger</h3>
 
-            <h3 class="infoFelt" id="varighed" th:text="${game.minDuration}">x minutter</h3>
+            <h3 class="infoFelt" id="varighed"><span th:text="${game.minDuration}">x</span> til <span th:text="${game.maxDuration}">x</span> minutter</h3>
 
-            <h3 class="infoFelt" id="rating" th:text="${game.introText}">x/x stjerner</h3>
+            <h3 class="infoFelt" id="rating">Rating goes here</h3>
         </div>
 
         <!-- Container til kort regelsæt og læs mere knap -->
         <div class="kortRegelsætContainer">
 
-            <p class="intro" th:text="game.introText">
+            <p class="intro" th:text="${game.introText}">
                 Indsæt normale regler her - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere ipsum vel tortor porttitor, sed
                 maximus nunc accumsan.
                 Nullam ac odio a urna sollicitudin vestibulum. Vivamus dignissim lacinia leo, nec dictum nisl sodales
@@ -99,7 +99,7 @@
 
         </div>
 
-        <a href="spilLæsMere" class="læsMereLink" target="_parent">Læs Mere</a>
+        <a href="spilInfo?game=Snyd" class="læsMereLink" target="_parent">Læs Mere</a>
 
     </div>
 

@@ -22,7 +22,7 @@ public class GameFactory {
         List<String> categories = new ArrayList<>();
         categories.add("Terningespil");
 
-        for (int i = 0; i < 9 ; i++){
+        for (int i = 0; i < amount ; i++){
         gameList.add(new Game("Snyd", 5,20,2,99, categories, materials,
                 "Raflebæger + 4 eller 5 terninger pr. person",
                 "Standardregler goes here",
