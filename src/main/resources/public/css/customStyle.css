@@ -28,26 +28,87 @@
     justify-content: space-between;
     align-items: center;
     height: 6em;
-    color: var(--text);
 }
 
-.top-nav input[type=text]{
-    padding: 6px;
-    font-size: 17px;
-    border: none;
-}
-
-.top-nav .søgContainer button{
-    padding: 6px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .logoImage{
     height: 6em;
     width: auto;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.logoText{
+    color: var(--text);
+    font-size: 1.5em;
+}
+
+.søgContainer{
+    position: absolute;
+    margin: 30em;
+}
+
+.top-nav input[type=text]{
+    padding: 6px;
+    font-size: 17px;
+}
+
+.top-nav .søgContainer button{
+    padding: 6px;
+    font-size: 17px;
+}
+
+.brugerLink{
+    display: flex;
+}
+
+.brugerLink form{
+    display: grid;
+    grid-template-areas:
+            "a c"
+            "b c";
+}
+
+.brugerLink input[type=text]{
+    margin: 6px;
+}
+
+.brugerLink input[type=password]{
+    margin: 6px;
+}
+
+.brugerLink input[type=submit]{
+    border-radius: 10px;
+    font-size: 17px;
+    margin: 6px;
+    height: 35px;
+    align-self: center;
+}
+
+.brugerLink button{
+    margin: 6px;
+    height: 35px;
+    align-self: center;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.brugerLink .welcome{
+    margin: 10px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.errorMessage{
+    margin: 10px;
+    font-weight: normal;
+    font-size: 17px;
+    align-self: center;
 }
 
 /* Hele oversigten med filtre og spilgrid*/
@@ -55,15 +116,15 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
-    margin: 6em;
+    margin: 3em;
 }
 
 /* Selve spilgriddet*/
 .gridContainer{
     display: grid;
     grid-template-columns: 20em 20em 20em;
-    gap: 1em;
-    margin: auto;
+    gap: 2em;
+    margin: 0 4em 4em 4em;
     align-items: center;
 }
 
@@ -86,6 +147,43 @@
     min-height: 10em;
     padding: 10px;
     background-color: var(--box);
+    color: var(--text);
+    border-color: var(--faded);
+    border-style: ridge;
+    border-width: 3px;
+}
+
+.filterKnapper button{
+    margin: 1em 2em 0 0;
+}
+
+
+/* Opret bruger */
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.register .formula{
+    display: flex;
+    flex-direction: column;
+    width: 25em;
+    padding: 3em;
+    gap: 0.5em;
+    label{
+        font-size: 17px;
+        color: var(--text);
+        font-weight: bold;
+    }
+    button{
+        padding: 6px;
+        font-weight: bold;
+        font-size: 17px;
+    }
+}
+
+.register div{
+    text-align: center;
     color: var(--text);
 }
 
@@ -141,7 +239,6 @@
     height: 70%;
     justify-self: center;
     align-self:center;
-    background-color: var(--button);
     color: var(--beige);
 }
 
@@ -248,14 +345,6 @@
     margin: 5px 5px 5px 5px;
 }
 
-/* Generelt buttons og anchors*/
-button{
-    border-radius: 10px;
-    font-weight: bold;
-    border-style: ridge;
-    border-width: 3px;
-    border-color: var(--faded);
-}
 
 /* test til at visualisere divs */
 div{

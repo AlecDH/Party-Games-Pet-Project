@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Opret bruger</title>
+    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/customStyle.css">
 </head>
-<body>
+<body class="background center">
 
-<div class="formula">
-    <form method="POST" action="/register">
+<div class="register">
+    <form class="formula" method="POST" action="/register">
 
-        <label for="username">Brugernavn</label>
+        <label for="username">Ønsket brugernavn</label>
         <input type="text" id="username" placeholder="Brugernavn" name="username" required>
 
         <label for="password">Password</label>
         <input type="password" id="password" placeholder="Password" name="password" required>
 
-        <label for="password-repeat">Repeat password</label>
-        <input type="password" id="password-repeat" placeholder="Gentag password" name="password-repeat" required>
+        <label for="password-repeat">Gentag password</label>
+        <input type="password" id="password-repeat" placeholder="Password" name="password-repeat" required>
 
         <button type="submit">Opret bruger</button>
     </form>
