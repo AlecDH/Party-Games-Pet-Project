@@ -1,37 +1,9 @@
 var selection = "Meyer";
 
-/* Loader alle spil, sammenligner selection med navnene og sætter info */
-async function loadGames(){
-    const res = await fetch("../../data/spil.json");
-    const data = await res.json();
-    displayInfo(data);
-}
-
 let regler = "regler";
 let drukregler = "drukregler";
 const reglerTekst = document.querySelector(".regelSæt")
 
-function displayInfo(data){
-    const titel = document.querySelector(".titel");
-    const antalSpillere = document.querySelector("#antalSpillere");
-    const materialer = document.querySelector("#materialer");
-    const varighed = document.querySelector("#varighed");
-    const rating = document.querySelector("#rating");
-
-    for (let game of data){
-        if (game.name === selection){
-            titel.textContent = game.name;
-            antalSpillere.textContent = game.minPlayers + " til " + game.maxPlayers + " spillere";
-            materialer.textContent = game.materialsText;
-            varighed.textContent = game.minDuration + " til " + game.maxDuration + " minutter";
-            drukregler = game.drinkingRules;
-            regler = game.rules;
-            reglerTekst.innerHTML = regler;
-        }
-    }
-}
-
-loadGames();
 
 function loadImage(selection){
     const query = "../assets/" + selection + ".jpg";

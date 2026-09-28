@@ -8,41 +8,42 @@
     <link rel="stylesheet" href="/css/customStyle.css">
     <link rel="stylesheet" href="/css/beertoggle.css">
 </head>
-<header>
+<header class="background">
 
     <!-- Top bar -->
-    <div class="top-nav box">
+    <div class="top-nav">
         <div class="logo">
             <img class="logoImage" src="/assets/logo.png" alt="Logo"/>
-            <h2 class="logoText">Bodega-spil.dk</h2>
         </div>
         <div class="søgContainer">
-            <input type="text" placeholder="Søg efter spil..." name="søg"/>
+            <input type="text" placeholder="Søg..." name="søg"/>
             <button type="submit">Søg</button>
         </div>
 
         <!-- Opret/Log ind formular-->
 
         <div class="brugerLink" th:if="${session.loggedInUser == null}">
+            <form method="POST" action="/login">
+
+                <label for="username">Brugernavn</label>
+                <input type="text" id="username" placeholder="Brugernavn" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password" name="password" required>
+
+                <input type="submit" value="Log ind">
+            </form>
             <div class="errorMessage" th:unless="${session.errorMessage == null}">
                 <p th:text="${session.errorMessage}">Fejlbesked</p>
             </div>
-            <form method="POST" action="/login">
-
-                <input type="text" id="username" placeholder="Brugernavn" name="username" required style="grid-area: a">
-
-                <input type="password" id="password" placeholder="Password" name="password" required style="grid-area: b">
-
-                <input type="submit" value="Log ind" style="grid-area: c">
-            </form>
             <form method="GET" action="/registerButton">
-                <button class="registerButton" type="submit" style="grid-area: c">Opret bruger</button>
+                <button class="registerButton" type="submit">Opret bruger</button>
             </form>
 
         </div>
 
         <div class="brugerLink" th:unless="${session.loggedInUser == null}">
-            <p class="welcome">Velkommen <span th:text="${session.loggedInUser.username}">username</span></p>
+            <p>Welcome <span th:text="${session.loggedInUser.username}">username</span></p>
             <form method="post" action="/logout"><button type="submit">Log ud</button></form>
         </div>
 
@@ -50,8 +51,8 @@
     </div>
 </header>
 
-<body  class="background">
-<div class="oversigtContainer">
+<body class="background-still">
+<div class="oversigtContainer" >
     <div class="spilFiltre">
         <form>
             <div class="filter" id="kategorier">
@@ -91,8 +92,8 @@
                 <label for="60+">60+ minutter</label>
             </div>
             <div class="filterKnapper">
-                <button type="submit">Filtrer</button>
                 <button type="reset">Nulstil</button>
+                <button type="submit">Filtrer</button>
             </div>
         </form>
 
@@ -117,7 +118,10 @@
 
 
     </div>
+
 </div>
+
+
 <script src="/js/spilOversigt.js" defer></script>
 </body>
 </html>

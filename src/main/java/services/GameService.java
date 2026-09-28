@@ -20,10 +20,12 @@ public class GameService {
 
     public static Game getGame(String name) {
         for (Game game : getGameList()) {
+            System.out.println(game.getName());
             if (game.getName().equals(name)) {
                 return game;
             }
         }
+        System.out.println("Returning null");
         return null;
     }
 }

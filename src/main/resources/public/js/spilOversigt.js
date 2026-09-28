@@ -1,22 +1,22 @@
 const modal = document.getElementById("modal");
 const iframe = document.getElementById("modalIframe");
 const closeButton = document.getElementById("closeModalKnap");
-const spil = document.querySelector(".spil");
+const alleSpil = document.querySelectorAll(".spil");
 
 function closeModal() {
-
     modal.style.display = "none";
 
     iframe.src = "";
 }
 
 function openModal() {
-    iframe.src = "spilPopup";
+    iframe.src = "spilPopup?game=Snyd";
     modal.style.display = "flex";
 }
 
+alleSpil.forEach(spil => { spil.addEventListener("click", openModal)})
 modal.addEventListener("click", closeModal);
-spil.addEventListener("click", openModal);
+
 
 
 

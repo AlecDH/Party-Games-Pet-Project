@@ -19,13 +19,15 @@ public class GameController {
         String name = ctx.queryParam("game");
         Game game = GameService.getGame(name);
         ctx.attribute("game", game);
-        ctx.render("/spilPopup.html");
+        ctx.render("/spilPopup");
     }
 
     private static void renderInfo(Context ctx) {
         String name = ctx.queryParam("game");
         Game game = GameService.getGame(name);
+        System.out.println(game.getName());
+        game = GameService.getGameList().getFirst();
         ctx.attribute("game", game);
-        ctx.render("/spilLæsMere.html");
+        ctx.render("/spilLæsMere");
     }
 }
