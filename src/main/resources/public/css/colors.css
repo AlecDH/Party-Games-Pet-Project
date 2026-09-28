@@ -82,3 +82,49 @@
             conic-gradient(from -45deg at 0% 100%, var(--cg)) var(--ts),
             conic-gradient(from -45deg at 50% 150%, var(--cg)) var(--ts);
 }
+
+.box {
+    background-color: var(--box);
+    border-style: ridge;
+    border-color: var(--faded);
+    border-width: 3px;
+    color: var(--text);
+}
+
+input[type=text]{
+    border-style: ridge;
+    border-color: var(--faded);
+    border-width: 3px;
+    background-color: antiquewhite;
+    font-size: 17px;
+    padding: 6px;
+}
+
+input[type=password]{
+    border-style: ridge;
+    border-color: var(--faded);
+    border-width: 3px;
+    background-color: antiquewhite;
+    font-size: 17px;
+    padding: 6px;
+}
+
+input[type=submit]{
+    font-weight: bold;
+    border-style: ridge;
+    border-width: 3px;
+    border-color: var(--faded);
+    background-color: var(--button);
+    color: var(--text);
+}
+
+button{
+    border-radius: 10px;
+    font-weight: bold;
+    border-style: ridge;
+    border-width: 3px;
+    border-color: var(--faded);
+    background-color: var(--button);
+    color: var(--text);
+    cursor: pointer;
+}
