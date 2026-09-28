@@ -271,6 +271,13 @@
     color: var(--text);
     border-color: var(--faded);
 }
+#ratingPopup{
+    height: 8em;
+}
+
+#ratingReadMore{
+    height: 11em;
+}
 
 /* Container for kort regelsæt og læs mere knap */
 .kortRegelsætContainer{

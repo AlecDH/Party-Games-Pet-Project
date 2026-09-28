@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/customStyle.css">
     <link rel="stylesheet" href="/css/beertoggle.css">
+    <link rel="stylesheet" href="/css/bottleCaps.css">
 </head>
 <body>
 
@@ -83,7 +84,13 @@
 
             <h3 class="infoFelt" id="varighed"><span th:text="${game.minDuration}">x</span> til <span th:text="${game.maxDuration}">x</span> minutter</h3>
 
-            <h3 class="infoFelt" id="rating">Rating goes here</h3>
+            <div class="infoFelt" id="ratingReadMore">
+                <h3>Bedøm dette spil</h3>
+
+                <div class="cap-row" id="capRow" role="radiogroup" aria-label="Star rating"></div>
+
+                <div class="status" id="status" aria-live="polite"></div>
+            </div>
         </div>
 
         <!-- Container til kort regelsæt og læs mere knap -->
@@ -104,6 +111,7 @@
     </div>
 
     <script src="/js/spilPopup.js" defer></script>
+    <script src="/js/bottleCaps.js" defer></script>
 
 </div>
 

@@ -1,0 +1,73 @@
+:root {
+    --unfilled: #787878;
+}
+
+* { box-sizing: border-box; }
+
+.cap-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.cap-btn {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    line-height: 0;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.15s ease;
+}
+
+.cap-btn:hover,
+.cap-btn:focus-visible {
+    transform: translateY(-3px) scale(1.06);
+}
+
+.cap-btn:active {
+    transform: translateY(0) scale(0.96);
+}
+
+.cap-btn:focus-visible svg .cap-body {
+    outline: none;
+    filter: drop-shadow(0 0 0 3px transparent);
+}
+
+.cap-btn svg {
+    display: block;
+    width: 52px;
+    height: 52px;
+    overflow: visible;
+}
+
+.cap-body {
+    transition: fill 0.18s ease;
+}
+
+.cap-shine {
+    stroke: #ffffff;
+    stroke-opacity: 0.8;
+    fill: none;
+    stroke-linecap: round;
+}
+
+.cap-tooth-shine {
+    stroke: #ffffff;
+    stroke-opacity: 1;
+    fill: none;
+    stroke-linecap: round;
+}
+
+.status {
+    font-size: 14px;
+    color: var(--text);
+    min-height: 20px;
+    padding-bottom: 6px;
+}
+
+.status strong {
+    color: var(--highlight);
+    font-weight: 600;
+}
