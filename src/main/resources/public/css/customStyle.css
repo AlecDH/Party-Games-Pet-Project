@@ -45,7 +45,7 @@
 
 .logoText{
     color: var(--text);
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 
 .søgContainer{
@@ -88,6 +88,7 @@
     margin: 6px;
     height: 35px;
     align-self: center;
+    cursor: pointer;
 }
 
 .brugerLink button{

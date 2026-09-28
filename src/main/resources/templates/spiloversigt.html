@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="/css/customStyle.css">
     <link rel="stylesheet" href="/css/beertoggle.css">
 </head>
-<header class="background">
+<header class="box">
 
     <!-- Top bar -->
     <div class="top-nav">
         <div class="logo">
             <img class="logoImage" src="/assets/logo.png" alt="Logo"/>
+            <h2 class="logoText">Bodega-spil.dk</h2>
         </div>
         <div class="søgContainer">
             <input type="text" placeholder="Søg..." name="søg"/>
@@ -23,21 +24,19 @@
         <!-- Opret/Log ind formular-->
 
         <div class="brugerLink" th:if="${session.loggedInUser == null}">
-            <form method="POST" action="/login">
-
-                <label for="username">Brugernavn</label>
-                <input type="text" id="username" placeholder="Brugernavn" name="username" required>
-
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Password" name="password" required>
-
-                <input type="submit" value="Log ind">
-            </form>
             <div class="errorMessage" th:unless="${session.errorMessage == null}">
                 <p th:text="${session.errorMessage}">Fejlbesked</p>
             </div>
+            <form method="POST" action="/login">
+
+                <input type="text" id="username" placeholder="Brugernavn" name="username" required style="grid-area: a">
+
+                <input type="password" id="password" placeholder="Password" name="password" required style="grid-area: b">
+
+                <input type="submit" value="Log ind" style="grid-area: c">
+            </form>
             <form method="GET" action="/registerButton">
-                <button class="registerButton" type="submit">Opret bruger</button>
+                <button class="registerButton" type="submit" style="grid-area: c">Opret bruger</button>
             </form>
 
         </div>
