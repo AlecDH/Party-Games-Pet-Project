@@ -7,6 +7,7 @@ import exceptions.PasswordsDontMatchException;
 import exceptions.UserAlreadyExistsException;
 import io.javalin.config.JavalinConfig;
 import io.javalin.http.Context;
+import persistence.ConnectionPool;
 import services.GameService;
 import services.UserService;
 
@@ -14,10 +15,17 @@ import java.util.List;
 
 public class UserController {
 
-    static UserService userService = new UserService();
-    static GameService gameService = new GameService();
+    private ConnectionPool connectionPool;
+    private UserService userService;
+    private GameService gameService;
 
-    public static void setRoutes(JavalinConfig config){
+    public UserController(ConnectionPool connectionPool){
+        this.connectionPool = connectionPool;
+        this.userService = new UserService(connectionPool);
+        this.gameService = new GameService(connectionPool);
+    }
+
+    public void setRoutes(JavalinConfig config){
         config.routes.get("/", ctx -> renderFrontPage(ctx));
         config.routes.post("/login", ctx -> login(ctx));
         config.routes.get("/registerButton", ctx -> renderRegisterPage(ctx));
@@ -25,14 +33,14 @@ public class UserController {
         config.routes.post("/logout", ctx -> logout(ctx));
     }
 
-    private static void renderFrontPage(Context ctx) {
-        List<Game> gameList = gameService.getGameList();
+    private void renderFrontPage(Context ctx) {
+       List<Game> gameList = gameService.getGameList();
 
         ctx.attribute("gameList", gameList);
         ctx.render("spiloversigt");
     }
 
-    private static void login(Context ctx){
+    private void login(Context ctx){
         String username = ctx.formParam("username");
         String password = ctx.formParam("password");
 
@@ -49,17 +57,17 @@ public class UserController {
         ctx.redirect("/");
     }
 
-    private static void logout(Context ctx){
+    private void logout(Context ctx){
         ctx.sessionAttribute("loggedInUser", null);
         ctx.redirect("/");
     }
 
-    private static void renderRegisterPage(Context ctx){
+    private void renderRegisterPage(Context ctx){
         ctx.attribute("errorMessage", null);
         ctx.render("register");
     }
 
-    private static void register(Context ctx){
+    private void register(Context ctx){
         String username = ctx.formParam("username");
         String password = ctx.formParam("password");
         String repeatedPassword = ctx.formParam("password-repeat");

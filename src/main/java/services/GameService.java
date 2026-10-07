@@ -2,20 +2,28 @@ package services;
 
 import entities.Game;
 import factories.GameFactory;
+import persistence.ConnectionPool;
+import persistence.GameMapper;
+import persistence.StatisticMapper;
 
 import java.util.List;
 
 public class GameService {
 
-    private static List<Game> gameList;
+    private ConnectionPool connectionPool;
+    private GameMapper gameMapper;
+    private StatisticMapper statisticMapper;
+    private List<Game> gameList;
 
-    public GameService(){
-        GameFactory gameFactory = new GameFactory();
-        gameList = gameFactory.createGames(9);
+    public GameService(ConnectionPool connectionPool){
+        this.connectionPool = connectionPool;
+        gameMapper = new GameMapper(connectionPool);
+        statisticMapper = new StatisticMapper(connectionPool);
+        //gameList = gameFactory.createGames(9);
     }
 
     public static List<Game> getGameList(){
-        return gameList;
+        return /*gamelist*/ null;
     }
 
     public static Game getGame(String name) {
