@@ -14,12 +14,8 @@ public class UserFactory {
     public List<User> createUsers(){
         List<User> userList = new ArrayList<>();
 
-        userList.add(new User("admin", "password"));
+        userList.add(new User(0, "admin", "password"));
 
         return userList;
-    }
-
-    public User createUser(String username, String password){
-        return new User(username, password);
     }
 }

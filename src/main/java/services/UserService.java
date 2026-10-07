@@ -34,6 +34,17 @@ public class UserService {
         return user;
     }
 
+    /*
+    public User login (String userName, String password) throws DatabaseException{
+
+		User user = getUserByUsername(userName);
+		if(user != null && user.getPassword().equals(password)){
+			return user;
+		}
+		else return null;
+	}
+     */
+
     public boolean findUser(String username){
         for (User u : userList){
             if(u.getUsername().equalsIgnoreCase(username)){
@@ -43,7 +54,7 @@ public class UserService {
         return false;
     }
 
-    public User createUser(String username, String password){
+    public User createUser(String username, String password) {
         //User user = userFactory.createUser(username, password);
         //userList.add(user);
         //return user;
