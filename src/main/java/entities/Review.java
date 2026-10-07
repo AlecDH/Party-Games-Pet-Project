@@ -1,14 +1,26 @@
 package entities;
 
 public class Review {
+	private int id;
 	private int rating;
 	private String text;
-	private User author;
+	private int userId;
+	private int gameId;
 
-	public Review(int rating, String text, User author) {
-		this.rating = rating;
+	public Review(int id, int rating, String text, int userId, int gameId) {
+		this.id = id;
 		this.text = text;
-		this.author = author;
+		this.rating = rating;
+		this.userId = userId;
+		this.gameId = gameId;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getRating() {
@@ -27,11 +39,19 @@ public class Review {
 		this.text = text;
 	}
 
-	public User getAuthor() {
-		return author;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setAuthor(User author) {
-		this.author = author;
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public int getGameId() {
+		return gameId;
+	}
+
+	public void setGameId(int gameId) {
+		this.gameId = gameId;
 	}
 }

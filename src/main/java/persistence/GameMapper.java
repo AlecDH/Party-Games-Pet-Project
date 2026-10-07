@@ -12,7 +12,7 @@ import java.util.List;
 public class GameMapper {
 	private ConnectionPool connectionPool;
 	private static final Logger logger =
-			LoggerFactory.getLogger(UserMapper.class);
+			LoggerFactory.getLogger(GameMapper.class);
 
 	public GameMapper(ConnectionPool connectionPool){
 		this.connectionPool = connectionPool;
