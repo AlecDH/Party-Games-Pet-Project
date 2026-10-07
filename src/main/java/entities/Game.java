@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Game {
 
+    private int id;
     private List<String> materials;
     private List<String> categories;
     private int minPlayers;
@@ -15,6 +16,10 @@ public class Game {
     private String standardRules;
     private String drinkingRules;
     private String introText;
+
+    public int getID() {
+        return id;
+    }
 
     public List<String> getMaterials() {
         return materials;
@@ -60,7 +65,8 @@ public class Game {
         return maxDuration;
     }
 
-    public Game(String name, int minDuration, int maxDuration, int minPlayers, int maxPlayers, List<String> categories, List<String> materials, String materialsText, String standardRules, String drinkingRules, String introText){
+    public Game(int id, String name, int minPlayers, int maxPlayers, int minDuration, int maxDuration, List<String> categories, List<String> materials, String materialsText, String standardRules, String drinkingRules, String introText){
+        this.id = id;
         this.materials = materials;
         this.categories = categories;
 
@@ -74,5 +80,26 @@ public class Game {
         this.standardRules = standardRules;
         this.drinkingRules = drinkingRules;
         this.introText = introText;
+    }
+
+    public Game(int id, String name, int minPlayers, int maxPlayers, int minDuration, int maxDuration, String introText){
+        this.id = id;
+        this.materials = materials;
+        this.categories = categories;
+
+        this.minPlayers = minPlayers;
+        this.maxPlayers = maxPlayers;
+        this.minDuration = minDuration;
+        this.maxDuration = maxDuration;
+
+        this.materialsText = materialsText;
+        this.name = name;
+        this.standardRules = standardRules;
+        this.drinkingRules = drinkingRules;
+        this.introText = introText;
+    }
+
+    public void setID(int id) {
+        this.id = id;
     }
 }
