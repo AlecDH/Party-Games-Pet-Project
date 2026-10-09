@@ -1,7 +1,6 @@
 package services;
 
 import entities.Game;
-import factories.GameFactory;
 import persistence.ConnectionPool;
 import persistence.GameMapper;
 import persistence.StatisticMapper;

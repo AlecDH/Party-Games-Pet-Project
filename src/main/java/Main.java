@@ -1,9 +1,7 @@
 import configuration.ThymeleafConfig;
 import controllers.GameController;
 import controllers.UserController;
-import factories.GameFactory;
 import io.javalin.Javalin;
-import io.javalin.http.*;
 import io.javalin.rendering.template.JavalinThymeleaf;
 import persistence.ConnectionPool;
 
