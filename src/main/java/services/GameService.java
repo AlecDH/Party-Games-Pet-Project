@@ -5,6 +5,7 @@ import persistence.ConnectionPool;
 import persistence.GameMapper;
 import persistence.StatisticMapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameService {
@@ -34,5 +35,35 @@ public class GameService {
         }
         System.out.println("Returning null");
         return null;
+    }
+
+    public static List<Game> filterByCategory(List<Game> games, String category) {
+        List<Game> filtered = new ArrayList<>();
+        for (Game game : games) {
+            if (game.getCategories().contains(category)) {
+                filtered.add(game);
+            }
+        }
+        return filtered;
+    }
+
+    public static List<Game> filterByPlayerCapacity(List<Game> games, int players) {
+        List<Game> filtered = new ArrayList<>();
+        for (Game game : games) {
+            if (game.getMinPlayers() <= players && game.getMaxPlayers() >= players) {
+                filtered.add(game);
+            }
+        }
+        return filtered;
+    }
+
+    public static List<Game> filterByDuration(List<Game> games, int duration) {
+        List<Game> filtered = new ArrayList<>();
+        for (Game game : games) {
+            if (game.getMinPlayers() <= duration && game.getMaxPlayers() >= duration) {
+                filtered.add(game);
+            }
+        }
+        return filtered;
     }
 }
