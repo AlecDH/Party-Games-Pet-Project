@@ -9,8 +9,8 @@ public class Game {
     private List<String> categories;
     private int minPlayers;
     private int maxPlayers;
-    private String minDuration;
-    private String maxDuration;
+    private int minDuration;
+    private int maxDuration;
     private String materialsText;
     private String name;
     private String standardRules;
@@ -57,15 +57,15 @@ public class Game {
         return maxPlayers;
     }
 
-    public String getMinDuration() {
+    public int getMinDuration() {
         return minDuration;
     }
 
-    public String getMaxDuration() {
+    public int getMaxDuration() {
         return maxDuration;
     }
 
-    public Game(int id, String name, int minPlayers, int maxPlayers, String minDuration, String maxDuration, List<String> categories, List<String> materials, String materialsText, String standardRules, String drinkingRules, String introText){
+    public Game(int id, String name, int minPlayers, int maxPlayers, int minDuration, int maxDuration, List<String> categories, List<String> materials, String materialsText, String standardRules, String drinkingRules, String introText){
         this.id = id;
         this.materials = materials;
         this.categories = categories;
@@ -82,7 +82,7 @@ public class Game {
         this.introText = introText;
     }
 
-    public Game(int id, String name, int minPlayers, int maxPlayers, String minDuration, String maxDuration, String introText){
+    public Game(int id, String name, int minPlayers, int maxPlayers, int minDuration, int maxDuration, String introText){
         this.id = id;
         this.materials = materials;
         this.categories = categories;

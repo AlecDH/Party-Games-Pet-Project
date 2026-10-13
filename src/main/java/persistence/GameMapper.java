@@ -31,8 +31,8 @@ public class GameMapper {
 				String name = rs.getString("name");
 				int minPlayers = rs.getInt("min_players");
 				int maxPlayers = rs.getInt("max_players");
-				String minDuration = rs.getString("min_duration");
-				String maxDuration = rs.getString("max_duration");
+				int minDuration = rs.getInt("min_duration");
+				int maxDuration = rs.getInt("max_duration");
 				String intro = rs.getString("intro_text");
 				Game game = new Game(id, name, minPlayers, maxPlayers, minDuration, maxDuration, intro);
 				games.add(game);
@@ -57,8 +57,8 @@ public class GameMapper {
 					String name = rs.getString("name");
 					int minPlayers = rs.getInt("min_players");
 					int maxPlayers = rs.getInt("max_players");
-					String minDuration = rs.getString("min_duration");
-					String maxDuration = rs.getString("max_duration");
+					int minDuration = rs.getInt("min_duration");
+					int maxDuration = rs.getInt("max_duration");
 					String intro = rs.getString("intro_text");
 					game = new Game(id, name, minPlayers, maxPlayers, minDuration, maxDuration, intro);
 				}
@@ -78,8 +78,8 @@ public class GameMapper {
 			stm.setString(1, game.getName());
 			stm.setInt(2, game.getMinPlayers());
 			stm.setInt(3, game.getMaxPlayers());
-			stm.setString(4, game.getMinDuration());
-			stm.setString(5, game.getMaxDuration());
+			stm.setInt(4, game.getMinDuration());
+			stm.setInt(5, game.getMaxDuration());
 			stm.setString(6, game.getIntroText());
 			stm.executeUpdate();
 			try (ResultSet rs = stm.getGeneratedKeys()) {

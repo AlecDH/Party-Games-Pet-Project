@@ -200,9 +200,9 @@ class GameMapperTest {
 			// Spil
 			stmt.execute("""
             INSERT INTO test.games (name, min_players, max_players, min_duration, max_duration, intro_text) VALUES
-            ('Spil1', 2, 8, '10 minutes', '20 minutes', 'Spil1 introtekst'),
-            ('Spil2', 1, 5, '20 minutes', '30 minutes', 'Spil2 introtekst'),
-            ('Spil3', 3, 4, '30 minutes', '40 minutes', 'Spil3 introtekst')
+            ('Spil1', 2, 8, 10, 20, 'Spil1 introtekst'),
+            ('Spil2', 1, 5, 20, 30, 'Spil2 introtekst'),
+            ('Spil3', 3, 4, 30, 40, 'Spil3 introtekst')
             """);
 
 			// Materialer
@@ -253,7 +253,7 @@ class GameMapperTest {
 		assertEquals(3, games.size());
 		assertEquals("Spil1", games.get(0).getName());
 		assertEquals(1, games.get(1).getMinPlayers());
-		assertEquals("00:10:00", games.get(0).getMinDuration());
+		assertEquals(10, games.get(0).getMinDuration());
 	}
 
 }
