@@ -1,8 +1,9 @@
 var selection = "Meyer";
 
+// test
 console.log(selection)
 
-
+// find spillets billede og sæt .spilLogo til det
 function loadImage(selection){
     const query = "../assets/" + selection + ".jpg";
     const imgElm = document.querySelector(".spilLogo")

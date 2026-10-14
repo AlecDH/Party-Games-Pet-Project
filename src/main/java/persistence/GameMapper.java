@@ -50,8 +50,8 @@ public class GameMapper {
 				" FROM games" +
 				" WHERE game_id = ?";
 		try (Connection connection = connectionPool.getConnection();
-			 PreparedStatement stm = connection.prepareStatement(query)) {
-			stm.setString(1, String.valueOf(id));
+			PreparedStatement stm = connection.prepareStatement(query)) {
+			stm.setInt(1, id);
 			try (ResultSet rs = stm.executeQuery()) {
 				if (rs.next()) {
 					String name = rs.getString("name");
@@ -107,7 +107,7 @@ public class GameMapper {
 			stm.setString(4, String.valueOf(game.getMinDuration()));
 			stm.setString(5, String.valueOf(game.getMaxDuration()));
 			stm.setString(6, game.getIntroText());
-			stm.setString(7, String.valueOf(game.getID()));
+			stm.setString(7, String.valueOf(game.getId()));
 			stm.executeQuery();
 		} catch (SQLException e) {
 			logger.error(e.getMessage());
@@ -120,7 +120,7 @@ public class GameMapper {
 				" WHERE game_id = ?";
 		try (Connection connection = connectionPool.getConnection();
 			 PreparedStatement stm = connection.prepareStatement(query)) {
-			stm.setString(1, String.valueOf(game.getID()));
+			stm.setString(1, String.valueOf(game.getId()));
 			stm.executeQuery();
 		} catch (SQLException e) {
 			logger.error(e.getMessage());

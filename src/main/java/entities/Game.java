@@ -17,9 +17,11 @@ public class Game {
     private String drinkingRules;
     private String introText;
 
-    public int getID() {
+    public int getId() {
         return id;
     }
+
+
 
     public List<String> getMaterials() {
         return materials;

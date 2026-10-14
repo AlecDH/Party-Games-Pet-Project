@@ -31,7 +31,8 @@
 
                 <input type="text" id="username" placeholder="Brugernavn" name="username" required style="grid-area: a">
 
-                <input type="password" id="password" placeholder="Password" name="password" required style="grid-area: b">
+                <input type="password" id="password" placeholder="Password" name="password" required
+                       style="grid-area: b">
 
                 <input type="submit" value="Log ind" style="grid-area: c">
             </form>
@@ -43,7 +44,9 @@
 
         <div class="brugerLink" th:unless="${session.loggedInUser == null}">
             <p>Welcome <span th:text="${session.loggedInUser.username}">username</span></p>
-            <form method="post" action="/logout"><button type="submit">Log ud</button></form>
+            <form method="post" action="/logout">
+                <button type="submit">Log ud</button>
+            </form>
         </div>
 
 
@@ -51,7 +54,7 @@
 </header>
 
 <body class="background-still">
-<div class="oversigtContainer" >
+<div class="oversigtContainer">
     <div class="spilFiltre">
         <form>
             <div class="filter" id="kategorier">
@@ -98,22 +101,118 @@
 
     </div>
     <div class="gridContainer">
-
-        <div class="spil" th:each="game : ${gameList}">
-        <div th:text="${game.name}">game name</div>
-        <div th:text="${game.minPlayers}">game name</div>
-        <div th:text="${game.maxPlayers}">game name</div>
-
+        <div class="spil" th:each="game : ${gameList}" th:attr="data-id=${game.id}">
+            <h3 th:text="${game.name}">Game name</h3>
+            <p th:text="${game.minPlayers} + '-' + ${game.maxPlayers} + ' spillere'">x-y spillere</p>
         </div>
 
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <button class="closeModalKnap">X</button>
+        <dialog id="game-modal">
+            <button id="modal-close" aria-label="Close">&times;</button>
 
-                <iframe id="modalIframe"></iframe>
+            <!-- Container for info om spillet -->
+            <div class="infoVindue background">
+                <!-- Titel på spillet -->
+                <h2 class="titel" style="grid-area: box-1" id="modal-name">Titel</h2>
+
+                <!-- Container for info i venstre side -->
+                <div class="infoVenstre" style="grid-area: box-2">
+
+                    <!-- Billede / Spillogo -->
+                    <img src="/assets/ek_logo.jpg" class="spilLogo" alt="Billede af spillets logo">
+
+                    <!-- Container til knapper i venstre side -->
+                    <div class="infoVenstreKnapper">
+
+                        <!-- "Spil" knap -->
+                        <button class="spilKnap">Spil</button>
+
+                        <!-- Container til drukregler checkbox og label -->
+                        <div class="stage">
+                            <div class="switch" role="switch" aria-checked="true" aria-label="Beer glass toggle"
+                                 tabindex="0" data-state="full" id="beerSwitch">
+                                <svg viewBox="0 0 150 210">
+                                    <defs>
+                                        <clipPath id="glassClip">
+                                            <path d="M40 20 L110 20 L102 190 Q102 200 92 200 L58 200 Q48 200 48 190 Z"/>
+                                        </clipPath>
+                                        <linearGradient id="liquidGrad" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="var(--amber-light)"/>
+                                            <stop offset="100%" stop-color="var(--amber-dark)"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <!-- glass shadow on ground -->
+                                    <ellipse cx="75" cy="204" rx="34" ry="6" fill="var(--glass-shadow)"/>
+
+                                    <!-- contents, clipped to glass interior -->
+                                    <g clip-path="url(#glassClip)">
+                                        <rect class="liquid" x="40" y="45" width="70" height="155"
+                                              fill="url(#liquidGrad)"/>
+                                        <circle class="bubble b1" cx="65" cy="150" r="2.2" fill="#fff6df"/>
+                                        <circle class="bubble b2" cx="82" cy="160" r="1.6" fill="#fff6df"/>
+                                        <circle class="bubble b3" cx="72" cy="140" r="1.8" fill="#fff6df"/>
+                                        <path class="foam"
+                                              d="M38 45 Q45 30 55 42 Q62 26 75 40 Q85 24 95 40 Q104 30 112 45 L112 58 L38 58 Z"
+                                              fill="var(--foam)"/>
+                                    </g>
+
+                                    <!-- glass outline on top -->
+                                    <path class="glass-outline"
+                                          d="M40 20 L110 20 L102 190 Q102 200 92 200 L58 200 Q48 200 48 190 Z"
+                                          fill="none" stroke="#d8dee6" stroke-width="3" stroke-linejoin="round"/>
+
+                                    <!-- handle -->
+                                    <path d="M110 55 Q140 55 140 90 Q140 120 110 118"
+                                          fill="none" stroke="#d8dee6" stroke-width="3" stroke-linecap="round"/>
+
+                                    <!-- shine -->
+                                    <path class="glass-shine" d="M50 28 L46 178" stroke="var(--glass-line)"
+                                          stroke-width="4" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="label" id="beerLabel">tap the glass</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Container for info i højre side -->
+                <div class="infoHøjre" style="grid-area: box-3">
+
+                    <!-- h3 overskrifter for spilinfo -->
+                    <div class="infoOverskrifter">
+                        <h3 class="infoFelt" id="modal-players">Antal spillere</h3>
+
+                        <h3 class="infoFelt" id="modal-materials">Materialer</h3>
+
+                        <h3 class="infoFelt" id="modal-duration">Varighed</h3>
+
+                        <h3 class="infoFelt" id="modal-rating">Bedømmelse</h3>
+                    </div>
+
+                    <!-- Container til kort regelsæt og læs mere knap -->
+                    <div class="kortRegelsætContainer">
+
+                        <p class="intro" id="modal-intro">
+                            Indsæt normale regler her - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aliquam posuere ipsum vel tortor porttitor, sed
+                            maximus nunc accumsan.
+                            Nullam ac odio a urna sollicitudin vestibulum. Vivamus dignissim lacinia leo, nec dictum
+                            nisl sodales
+                            ac.
+                            Phasellus ut lorem in turpis congue pellentesque.
+                        </p>
+
+                    </div>
+
+                    <a id="modal-readmore" href="#" class="læsMereLink" target="_parent">Læs Mere</a>
+
+                </div>
+
+                <script src="/js/spilPopup.js" defer></script>
 
             </div>
-        </div>
+        </dialog>
 
 
     </div>

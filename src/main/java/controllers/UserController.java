@@ -2,6 +2,7 @@ package controllers;
 
 import entities.Game;
 import entities.User;
+import exceptions.DatabaseException;
 import exceptions.IncorrectLoginInfoException;
 import exceptions.PasswordsDontMatchException;
 import exceptions.UserAlreadyExistsException;
@@ -34,9 +35,12 @@ public class UserController {
     }
 
     private void renderFrontPage(Context ctx) {
-       List<Game> gameList = gameService.getGameList();
-
-        ctx.attribute("gameList", gameList);
+        try {
+            List<Game> gameList = gameService.getGameList();
+            ctx.attribute("gameList", gameList);
+        } catch (DatabaseException e) {
+			ctx.sessionAttribute("errorMessage", e.getMessage());
+		}
         ctx.render("spiloversigt");
     }
 

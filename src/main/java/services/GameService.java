@@ -1,6 +1,7 @@
 package services;
 
 import entities.Game;
+import exceptions.DatabaseException;
 import persistence.ConnectionPool;
 import persistence.GameMapper;
 import persistence.StatisticMapper;
@@ -22,11 +23,11 @@ public class GameService {
         //gameList = gameFactory.createGames(9);
     }
 
-    public static List<Game> getGameList(){
-        return /*gamelist*/ null;
-    }
+    public List<Game> getGameList() throws DatabaseException {
+		return gameMapper.getAllGames();
+	}
 
-    public static Game getGame(String name) {
+    public Game getGameByName(String name) throws DatabaseException{
         for (Game game : getGameList()) {
             System.out.println(game.getName());
             if (game.getName().equals(name)) {
@@ -47,7 +48,7 @@ public class GameService {
         return filtered;
     }
 
-    public static List<Game> filterByPlayerCapacity(List<Game> games, int players) {
+    public List<Game> filterByPlayerCapacity(List<Game> games, int players) {
         List<Game> filtered = new ArrayList<>();
         for (Game game : games) {
             if (game.getMinPlayers() <= players && game.getMaxPlayers() >= players) {
@@ -57,7 +58,7 @@ public class GameService {
         return filtered;
     }
 
-    public static List<Game> filterByDuration(List<Game> games, int duration) {
+    public List<Game> filterByDuration(List<Game> games, int duration) {
         List<Game> filtered = new ArrayList<>();
         for (Game game : games) {
             if (game.getMinPlayers() <= duration && game.getMaxPlayers() >= duration) {
