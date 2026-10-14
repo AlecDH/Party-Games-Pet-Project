@@ -56,7 +56,7 @@
 <body class="background-still">
 <div class="oversigtContainer">
     <div class="spilFiltre">
-        <form>
+        <form method="GET" action="/filter">
             <div class="filter" id="kategorier">
                 <p>Kategorier:</p>
 
@@ -79,19 +79,12 @@
                 <output id="antal" name="antal" for="antalSpillereSlider">4</output>
                 <label for="antalSpillereSlider" hidden="hidden">Antal spillere (mellem 1 og 12)</label>
             </div>
-            <div class="filter" id="varighed">
+            <div class="filter" id="varighedFilter">
                 <p>Anslået varighed:</p>
-
-                <input type="checkbox" id="0-15" name="varighed" value="0-15"/>
-                <label for="0-15">0-15 minutter</label><br/>
-                <input type="checkbox" id="15-30" name="varighed" value="15-30"/>
-                <label for="15-30">15-30 minutter</label><br/>
-                <input type="checkbox" id="30-45" name="varighed" value="30-45"/>
-                <label for="30-45">30-45 minutter</label><br/>
-                <input type="checkbox" id="45-60" name="varighed" value="45-60"/>
-                <label for="45-60">45-60 minutter</label><br/>
-                <input type="checkbox" id="60+" name="varighed" value="60+"/>
-                <label for="60+">60+ minutter</label>
+                <input type="range" id="varighedSlider" name="varighedSlider" min="15" max="60" value="30"
+                       oninput="varighed.value=varighedSlider.value"/>
+                <output id="varighed" name="varighed" for="varighedSlider">30</output>
+                <label for="varighedSlider" hidden="hidden">Varighed</label>
             </div>
             <div class="filterKnapper">
                 <button type="reset">Nulstil</button>

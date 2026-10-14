@@ -38,7 +38,7 @@ public class GameService {
         return null;
     }
 
-    public static List<Game> filterByCategory(List<Game> games, String category) {
+    public List<Game> filterByCategory(List<Game> games, String category) {
         List<Game> filtered = new ArrayList<>();
         for (Game game : games) {
             if (game.getCategories().contains(category)) {
@@ -61,7 +61,7 @@ public class GameService {
     public List<Game> filterByDuration(List<Game> games, int duration) {
         List<Game> filtered = new ArrayList<>();
         for (Game game : games) {
-            if (game.getMinPlayers() <= duration && game.getMaxPlayers() >= duration) {
+            if (game.getMinDuration() <= duration && game.getMaxDuration() >= duration) {
                 filtered.add(game);
             }
         }

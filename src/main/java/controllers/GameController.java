@@ -8,6 +8,7 @@ import persistence.ConnectionPool;
 import persistence.GameMapper;
 import services.GameService;
 
+import java.util.List;
 import java.util.Map;
 
 public class GameController {
@@ -25,6 +26,7 @@ public class GameController {
 		config.routes.get("/spilPopup", ctx -> renderPopup(ctx));
 		config.routes.get("/games/{id}/info", ctx -> renderInfo(ctx));
 		config.routes.get("/games/{id}", ctx -> gameToJson(ctx));
+		config.routes.get("/filter", ctx -> filterGames(ctx));
 	}
 
 	private void renderPopup(Context ctx) {
@@ -64,5 +66,24 @@ public class GameController {
             // Temporary
             ctx.result(e.getMessage());
 		}
+	}
+
+	private void filterGames(Context ctx) {
+		String category = ctx.queryParam("kategori");
+		int players = Integer.parseInt(ctx.queryParam("antalSpillereSlider"));
+		int duration = Integer.parseInt(ctx.queryParam("varighedSlider"));
+		System.out.println("category=" + category + ", players=" + players + ", duration=" + duration);
+		try {
+			List<Game> gameList = gameService.getGameList();
+			if (category != null) {
+				gameList = gameService.filterByCategory(gameList, category);
+			}
+			gameList = gameService.filterByPlayerCapacity(gameList, players);
+			gameList = gameService.filterByDuration(gameList, duration);
+			ctx.attribute("gameList", gameList);
+		} catch (DatabaseException e) {
+			ctx.sessionAttribute("errorMessage", e.getMessage());
+		}
+		ctx.render("spiloversigt");
 	}
 }
