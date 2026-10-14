@@ -100,10 +100,29 @@
         </form>
 
     </div>
+
     <div class="gridContainer">
         <div class="spil" th:each="game : ${gameList}" th:attr="data-id=${game.id}">
-            <h3 th:text="${game.name}">Game name</h3>
-            <p th:text="${game.minPlayers} + '-' + ${game.maxPlayers} + ' spillere'">x-y spillere</p>
+            <div class="spilInfo">
+                <h3 class="spilNavn" th:text="${game.name}">Spilnavn</h3>
+                <p class="spilSpillere" th:text="${game.minPlayers} + ' - ' + ${game.maxPlayers} + ' spillere'">x-y spillere</p>
+            </div>
+            <ul class="spilKategorier" th:if="${game.categories != null}">
+                <li class="kategori" th:each="kategori : ${game.categories}" th:title="${kategori}">
+                    <span class="kategoriEmoji" th:switch="${kategori}">
+                        <th:block th:case="'Party'">🎉</th:block>
+                        <th:block th:case="'Strategy'">♟</th:block>
+                        <th:block th:case="'Cooperative'">🤝</th:block>
+                        <th:block th:case="'Drinking'">🍺</th:block>
+                        <th:block th:case="'Trivia'">❓</th:block>
+                        <th:block th:case="'Card'">🃏</th:block>
+                        <th:block th:case="'Dice'">🎲</th:block>
+                        <th:block th:case="'Family'">🏠</th:block>
+                        <th:block th:case="*">🏷</th:block>
+                    </span>
+                        <span th:text="${kategori}">Kategori</span>
+                </li>
+            </ul>
         </div>
 
         <dialog id="game-modal">

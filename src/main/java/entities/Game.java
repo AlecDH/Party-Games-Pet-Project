@@ -21,8 +21,6 @@ public class Game {
         return id;
     }
 
-
-
     public List<String> getMaterials() {
         return materials;
     }
@@ -103,5 +101,9 @@ public class Game {
 
     public void setID(int id) {
         this.id = id;
+    }
+
+    public void setCategories(List<String> categories){
+        this.categories = categories;
     }
 }
